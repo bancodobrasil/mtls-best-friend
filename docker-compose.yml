@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  frontend:
+    image: local/mtls-test-hotsite-frontend:0.1.0
+    build: frontend
+    ports:
+      - 3003:80
+
+  backend:
+    image: local/mtls-test-hotsite-backend:0.1.0
+    build: backend
+    ports:
+      - 4004:3000
