@@ -2,55 +2,56 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container mx-auto max-w-screen-lg">
       <Head>
         <title>mTLS Best Friend</title>
         <link rel="icon" href="/logo_labbs.png" />
       </Head>
 
-      <main>
-        <h1 className="title flex justify-center items-center my-4 text-6xl">
+      <main className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h1 className="col-span-1 md:col-span-2 title flex justify-center items-center my-4 text-6xl">
           <span className="mr-2 font-bold">mTLS</span>
           <a href="https://mtlsbff.dev">BFF</a> <img src="/heart.png" className="h-14" />
         </h1>
 
-        <p className="description">
-          Easily test your mTLS <code>server</code> and <code>client</code>
+        <p className="col-span-1 md:col-span-2 max-w-screen-md mx-auto description">
+          Instantly test your mTLS <code>server</code> and <code>client</code> while getting some tips on how to easily setup up this mess.
         </p>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3 className="font-bold">mTLS Server &rarr;</h3>
-            <p>
-              Upload a <strong>client certificate</strong> to test your mTLS server with one click from a ready to request online client
-              with code examples.
-            </p>
-          </a>
+        <a href="/test-server" className="card">
+          <h3 className="font-bold">mTLS Server &rarr;</h3>
+          <p>
+            Upload a <strong>client certificate</strong> to test your mTLS public server with one click from a ready to request online
+            client with code examples.
+          </p>
+        </a>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3 className="font-bold">mTLS Client &rarr;</h3>
-            <p>
-              Download a <strong>client certificate</strong> and make a quick connection test from your application to a ready to ping mTLS
-              server.
-            </p>
-          </a>
+        <a href="/test-client" className="card">
+          <h3 className="font-bold">mTLS Client &rarr;</h3>
+          <p>
+            Download a <strong>client certificate</strong> and make a quick connection test from your application to a ready to ping mTLS
+            server.
+          </p>
+        </a>
 
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className="card">
-            <h3 className="font-bold">Sidecar &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+        <a href="/sidecar" className="card">
+          <h3 className="font-bold">Sidecar Proxy &rarr;</h3>
+          <p>
+            Leave the mTLS dirty job away from your API endpoints using this Sidecar Proxy Docker image, standalone on in your prefered
+            cluster provider.
+          </p>
+        </a>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3 className="font-bold">Ambassador &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
+        <a href="/ambassador" className="card">
+          <h3 className="font-bold">Ambassador Gateway &rarr;</h3>
+          <p>
+            Need a help making a request to an mTLS server? This Ambassador Docker image got you covered! Make a regular request to it and
+            it will handle the mTLS stuff.
+          </p>
+        </a>
       </main>
 
-      <footer>
+      <footer className="mt-8">
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -61,24 +62,6 @@ export default function Home() {
       </footer>
 
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
         footer {
           width: 100%;
           height: 100px;
@@ -132,18 +115,7 @@ export default function Home() {
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
         .card {
-          margin: 1rem;
           flex-basis: 45%;
           padding: 1.5rem;
           text-align: left;
