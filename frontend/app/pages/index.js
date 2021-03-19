@@ -8,10 +8,10 @@ export default function Home() {
         <link rel="icon" href="/logo_labbs.png" />
       </Head>
 
-      <main className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <h1 className="col-span-1 md:col-span-2 title flex justify-center items-center my-4 text-6xl">
           <span className="mr-2 font-bold">mTLS</span>
-          <a href="https://mtlsbff.dev">BFF</a> <img src="/heart.png" className="h-14" />
+          <span className="text-blue-600">BFF</span> <img src="/heart.png" className="h-14" />
         </h1>
 
         <p className="col-span-1 md:col-span-2 max-w-screen-md mx-auto description">
@@ -51,36 +51,13 @@ export default function Home() {
         </a>
       </main>
 
-      <footer className="mt-8">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/logo_bb.jpg" alt="Logo BB" className="logo" />
+      <footer className="mt-8 mb-4 pt-4 flex justify-center items-center border-t">
+        <a href="https://www.bb.com.br" target="_blank" rel="noopener noreferrer" className="flex flex-col justify-center items-center">
+          Brought to you by <img src="/logo_bb.jpg" alt="Logo BB" className="logo mt-2 w-10" />
         </a>
       </footer>
 
       <style jsx>{`
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
         a {
           color: inherit;
           text-decoration: none;
