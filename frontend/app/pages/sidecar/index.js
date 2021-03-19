@@ -54,7 +54,7 @@ services:
           <div className="border-r border-t border-gray-200 rounded p-8">
             <Trans i18nKey="sidecar.toPutYourmTLSSidecarToRun" />
 
-            <ol className="ml-4 mt-2">
+            <ol className="ml-4 mt-2 list-decimal">
               <li>
                 <Trans i18nKey="sidecar.1serverPEMUsedToMakeTheTLS" />
               </li>
@@ -68,6 +68,42 @@ services:
             <p className="mt-4">
               <Trans i18nKey="sidecar.certificateFilesListDescription" />
             </p>
+          </div>
+
+          <div className="border-l border-t border-gray-200 rounded p-8">
+            <Trans i18nKey="sidecar.downloadCertificateToTestLocalInstructions" components={{ code: <code /> }} />
+            <ul className="list-disc ml-4 mt-4 mb-4">
+              <li>
+                <a href="">
+                  <strong>server.pem</strong>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <strong>server-key.pem</strong>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <strong>clientes-ca.pem</strong>
+                </a>
+              </li>
+            </ul>
+            <div className="mt-2">
+              <Trans i18nKey="sidecar.dockerComposeUpInstructions" />
+              <div className="bg-gray-50 p-3 mt-2">
+                <code className="text-sm">$ docker-compose up</code>
+              </div>
+            </div>
+
+            <div className="mt-2">
+              <Trans i18nKey="sidecar.curlToTestInstructions" />
+              <div className="bg-gray-50 p-3 mt-2">
+                <code className="text-sm">
+                  $ curl --cacert ./clients-ca.pem --key ./client.key.pem --cert ./client.pem -k https://localhost
+                </code>
+              </div>
+            </div>
           </div>
         </main>
 

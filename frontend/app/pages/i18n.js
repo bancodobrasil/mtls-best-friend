@@ -32,13 +32,19 @@ const resources = {
 
       "sidecar.toPutYourmTLSSidecarToRun": "To put your mTLS Sidecar Proxy to run you will have to get those 3 PEM files:",
 
-      "sidecar.1serverPEMUsedToMakeTheTLS": "<strong>1. server.pem</strong>: used to make the TLS (HTTPS) connection",
-      "sidecar.2serverKeyPEMAlsoUsed": "<strong>2. server-key.pem</strong>: also used to make the TLS (HTTPS) connection",
+      "sidecar.1serverPEMUsedToMakeTheTLS": "<strong>server.pem</strong>: used to make the TLS (HTTPS) connection",
+      "sidecar.2serverKeyPEMAlsoUsed": "<strong>server-key.pem</strong>: also used to make the TLS (HTTPS) connection",
       "sidecar.3clientsCAPEMUsedToVerify":
-        "<strong>3. clients-ca.pem</strong>: used to verify if the client certificates used on the incoming connections",
+        "<strong>clients-ca.pem</strong>: used to verify if the client certificates used on the incoming connections",
 
       "sidecar.certificateFilesListDescription":
         "The server-key.pem and server.pem should be from a trustworthy Certification Authority, such as Let's Encrypt, Glogal Sign, Verisign, Digicert and so son. The clients-ca.pem must be an intermediate AC (could be self generated) that was used to generate the client certificates used to authenticate the connection",
+
+      "sidecar.downloadCertificateToTestLocalInstructions":
+        "To run locally, create a <code>docker-compose.yml</code> file like the one above, set the <code>PROXY_PASS</code> to a known website address, create a folder named <strong>certs</strong> and download the following certificates to this folder mapping it as volume to the <code>/etc/nginx/conf.d/certs</code> folder.",
+
+      "sidecar.dockerComposeUpInstructions":
+        "After downloading the certificate to the <strong>certs</strong> folder, bring the container up:",
     },
   },
   pt: {
