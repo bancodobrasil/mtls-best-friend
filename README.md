@@ -1,4 +1,4 @@
-# mTLS Test Hotsite
+# mTLS Best Friend
 
 A lightweight website for testing mTLS as both client and server
 

@@ -1,20 +1,18 @@
 import Head from "next/head";
-import Navbar from "../../common/navbar";
-import Footer from "../../common/footer";
+import { Trans } from "react-i18next";
+import Image from "next/image";
 
 import "../i18n";
-import { Trans } from "react-i18next";
+import Layout from "../../components/layout";
 
 export default function Sidecar() {
   return (
-    <div>
-      <Navbar />
+    <Layout>
+      <Head>
+        <title>mTLS Best Friend</title>
+        <link rel="icon" href="/logo_labbs.png" />
+      </Head>
       <div className="container mx-auto max-w-screen-lg pt-8">
-        <Head>
-          <title>mTLS Best Friend</title>
-          <link rel="icon" href="/logo_labbs.png" />
-        </Head>
-
         <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <h1 className="col-span-1 md:col-span-2 title flex justify-center items-center my-4 text-6xl">
             <span className="mr-2 font-bold">Sidecar</span>
@@ -26,7 +24,7 @@ export default function Sidecar() {
           </p>
 
           <div className="border-r border-b border-gray-200 rounded p-8">
-            <img src="/mTLS-sidecar-proxy.png" />
+            <Image src="/mTLS-sidecar-proxy.png" alt="sidecar proxy diagram" height={291} width={458} />
           </div>
           <div className="border-l border-b border-gray-200 rounded p-8">
             <div>
@@ -106,9 +104,7 @@ services:
             </div>
           </div>
         </main>
-
-        <Footer />
       </div>
-    </div>
+    </Layout>
   );
 }

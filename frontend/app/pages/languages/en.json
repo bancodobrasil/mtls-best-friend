@@ -30,9 +30,10 @@
 
   "server.headerTagLine": "Are you setting up your server to authenticate mTLS, but you need some help with a simple client to quickly check whether your server connection configuration is working? Let's do it!",
 
-  "server.uploadInstructionsLine1": "To test your server, first paste a Client <strong>private key</strong> and <strong>certificate</strong> signed by your trusted CA an click the <strong>\"Test now!\"</strong> button to send a test request to your mTLS server using the provided certificate to authenticate.",
+  "server.uploadInstructionsLine1": "To test your server, first paste a client <strong>private key</strong> with its respective <strong>certificate</strong> and the <strong>CA public key</strong> you used to sign this client certificate and then click the <strong>\"Test now!\"</strong> button to send a test request to your mTLS server using the provided certificate to authenticate.",
   "server.privateKeyLabelUpload": "<strong>Private Key</strong> in Base64 PEM format:",
   "server.certificateLabelUpload": "<strong>Public Certificate</strong> in Base64 PEM format:",
+  "server.caLabelUpload": "Public <strong>CA certificate</strong> in Base64 PEM format used to sign the client certificate to be added as trusted authority:",
   "server.theTestStepsAre": "The test service does the following checks:",
   "server.URLToTest": "Your <strong>mTLS server</strong> endpoint URL to test:",
   "server.attemptToMakePOSTGETRequestWithCertificate": "POST and GET resquest <strong>with</strong> the provided client certificate. Expected responde: <code>200 Success</code>",
