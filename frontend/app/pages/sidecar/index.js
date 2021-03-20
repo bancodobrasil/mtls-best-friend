@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Navbar from "../common/navbar";
-import Footer from "../common/footer";
+import Navbar from "../../common/navbar";
+import Footer from "../../common/footer";
 
 import "../i18n";
 import { Trans } from "react-i18next";
 
-export default function Home() {
+export default function Sidecar() {
   return (
     <div>
       <Navbar />
@@ -18,7 +18,7 @@ export default function Home() {
         <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <h1 className="col-span-1 md:col-span-2 title flex justify-center items-center my-4 text-6xl">
             <span className="mr-2 font-bold">Sidecar</span>
-            <span className="text-blue-600">PROXY</span>
+            <span className="text-blue-600 font-bold">PROXY</span>
           </h1>
 
           <p className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
@@ -74,18 +74,18 @@ services:
             <Trans i18nKey="sidecar.downloadCertificateToTestLocalInstructions" components={{ code: <code /> }} />
             <ul className="list-disc ml-4 mt-4 mb-4">
               <li>
-                <a href="">
-                  <strong>server.pem</strong>
+                <a href="/demo/certs/server.pem" className="underline text-blue-600">
+                  server.pem
                 </a>
               </li>
               <li>
-                <a href="">
-                  <strong>server-key.pem</strong>
+                <a href="/demo/certs/server-key.pem" className="underline text-blue-600">
+                  server-key.pem
                 </a>
               </li>
               <li>
-                <a href="">
-                  <strong>clientes-ca.pem</strong>
+                <a href="/demo/certs/clients-ca.pem" className="underline text-blue-600">
+                  clientes-ca.pem
                 </a>
               </li>
             </ul>

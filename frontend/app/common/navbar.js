@@ -17,16 +17,16 @@ export default () => {
             <Link href="/"> Home</Link>
           </li>
           <li>
-            <Link href="/"> Server </Link>
+            <Link href="/server"> Server </Link>
           </li>
           <li>
-            <Link href="/"> Client</Link>
+            <Link href="/client"> Client</Link>
           </li>
           <li>
             <Link href="/sidecar"> Sidecar</Link>
           </li>
           <li>
-            <Link href="/"> Ambassador</Link>
+            <Link href="/ambassador"> Ambassador</Link>
           </li>
         </ul>
         <div>

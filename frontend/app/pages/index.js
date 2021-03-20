@@ -4,8 +4,8 @@ import Link from "next/link";
 import "./i18n";
 import { Trans } from "react-i18next";
 
-import Navbar from "./common/navbar";
-import Footer from "./common/footer";
+import Navbar from "../common/navbar";
+import Footer from "../common/footer";
 
 export default function Home() {
   return (
@@ -20,25 +20,25 @@ export default function Home() {
         <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <h1 className="col-span-1 md:col-span-2 title flex justify-center items-center my-4 text-6xl">
             <span className="mr-2 font-bold">mTLS</span>
-            <span className="text-blue-600">Best Friend</span>
+            <span className="text-blue-600 font-bold">Best Friend</span>
           </h1>
 
           <p className="col-span-1 md:col-span-2 max-w-screen-md mx-auto text-2xl text-center">
             <Trans i18nKey="home.headerTagLine" components={{ code: <code /> }} />
           </p>
 
-          <Link href="/test-server">
+          <Link href="/server">
             <div className="card cursor-pointer">
-              <h3 className="font-bold">mTLS Server &rarr;</h3>
+              <h3 className="font-bold">mTLS Server Test &rarr;</h3>
               <p>
                 <Trans i18nKey="home.mtlsServerCardDescription" />
               </p>
             </div>
           </Link>
 
-          <Link href="/test-client">
+          <Link href="/client">
             <div className="card cursor-pointer">
-              <h3 className="font-bold">mTLS Client &rarr;</h3>
+              <h3 className="font-bold">mTLS Client Test &rarr;</h3>
               <p>
                 <Trans i18nKey="home.mtlsClientCardDescription" />
               </p>
