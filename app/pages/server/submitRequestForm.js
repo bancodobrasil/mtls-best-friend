@@ -7,7 +7,16 @@ export default function SubmitRequestForm() {
   const [certificate, setCertificate] = useState();
   const [ca, setCA] = useState();
 
-  const submit = async () => {};
+  const submit = async () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url, key, certificate, ca }),
+    };
+    const res = await fetch("/api/request-mtls-server", requestOptions);
+    const remoteMTLSResponse = await res.json();
+    console.log(remoteMTLSResponse);
+  };
 
   return (
     <div className="border-l border-b border-gray-200 rounded p-8">

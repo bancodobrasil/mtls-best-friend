@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { Trans } from "react-i18next";
 
-import "../i18n";
 import Layout from "../../components/layout";
 import SubmitRequestForm from "./submitRequestForm";
 

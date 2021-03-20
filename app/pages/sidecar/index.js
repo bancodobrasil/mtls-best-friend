@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Trans } from "react-i18next";
 import Image from "next/image";
 
-import "../i18n";
 import Layout from "../../components/layout";
 
 export default function Sidecar() {

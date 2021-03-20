@@ -1,21 +1,15 @@
-import React from "react";
 import Head from "next/head";
-import "../i18n";
 import { Trans } from "react-i18next";
-
-import Navbar from "../../common/navbar";
-import Footer from "../../common/footer";
+import Layout from "../../components/layout";
 
 export default function Ambassador() {
   return (
-    <div>
-      <Navbar />
+    <Layout>
+      <Head>
+        <title>mTLS Best Friend</title>
+        <link rel="icon" href="/logo_labbs.png" />
+      </Head>
       <div className="container mx-auto max-w-screen-lg pt-8">
-        <Head>
-          <title>mTLS Best Friend</title>
-          <link rel="icon" href="/logo_labbs.png" />
-        </Head>
-
         <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <h1 className="col-span-1 md:col-span-2 title flex justify-center items-center my-4 text-6xl">
             <span className="mr-2 font-bold">Ambassador</span>
@@ -28,6 +22,6 @@ export default function Ambassador() {
         </main>
         <Footer />
       </div>
-    </div>
+    </Layout>
   );
 }

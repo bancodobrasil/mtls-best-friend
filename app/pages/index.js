@@ -3,8 +3,6 @@ import Link from "next/link";
 import { Trans } from "react-i18next";
 import Layout from "../components/layout";
 
-import "./i18n";
-
 export default function Home() {
   return (
     <Layout>

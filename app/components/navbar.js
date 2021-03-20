@@ -1,7 +1,6 @@
-import React from "react";
 import Link from "next/link";
 
-export default () => {
+export default function Navbar() {
   return (
     <div className="w-full p-3 border-b">
       <nav className="container max-w-screen-lg  mx-auto flex flex-row justify-between">
@@ -42,4 +41,4 @@ export default () => {
       </nav>
     </div>
   );
-};
+}
