@@ -14,7 +14,9 @@
     "next": "^10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-i18next": "^11.8.10"
+    "react-i18next": "^11.8.10",
+    "sweetalert2": "^10.15.6",
+    "sweetalert2-react-content": "^3.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
