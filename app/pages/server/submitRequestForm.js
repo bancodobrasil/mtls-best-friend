@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Trans } from "react-i18next";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import ItemTestWithValidCertificate from "./itemTestWithValidCertificate";
 
 const Sweet = withReactContent(Swal);
 
@@ -10,6 +11,7 @@ export default function SubmitRequestForm() {
   const [key, setKey] = useState();
   const [certificate, setCertificate] = useState();
   const [ca, setCA] = useState();
+
   const submit = async () => {
     // const requestOptions = {
     //   method: "POST",
@@ -18,10 +20,22 @@ export default function SubmitRequestForm() {
     // };
     // const res = await fetch("/api/request-mtls-server", requestOptions);
     // const remoteMTLSResponse = await res.json();
-    // console.log(remoteMTLSResponse);
     Sweet.fire({
-      title: <p>Hello World</p>,
-      footer: "Copyright 2018",
+      title: (
+        <div>
+          <Trans i18nKey="server.TestingYourMTLSServer" />
+          ...
+        </div>
+      ),
+      html: (
+        <div>
+          <ul>
+            <li>
+              <ItemTestWithValidCertificate />
+            </li>
+          </ul>
+        </div>
+      ),
       showClass: {
         popup: "sweet-popup-open",
       },
