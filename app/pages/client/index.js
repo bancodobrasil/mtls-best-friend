@@ -1,6 +1,4 @@
 import Head from "next/head";
-import { Trans } from "react-i18next";
-
 import Layout from "../../components/layout";
 
 export default function Client() {
@@ -18,7 +16,10 @@ export default function Client() {
           </h1>
 
           <p className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
-            <Trans i18nKey="Soon!" />
+            Contribute to this project at{" "}
+            <a href="https://github.com/labbsr0x/mtls-best-friend" className="underline text-blue-600" target="_blank" rel="noreferer">
+              https://github.com/labbsr0x/mtls-best-friend
+            </a>
           </p>
         </main>
       </div>
