@@ -1,20 +1,14 @@
-import { useState } from "react";
-import Image from "next/image";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useSWR from "swr";
+import { fetcher } from "../../components/fetcher";
+import StatusedItem from "./statusedItem";
 
-import { Trans } from "react-i18next";
-
-export default function ItemTestWithValidCertificate() {
-  const [statusIcon, setStatusIcon] = useState("off");
-  return (
-    <div>
-      <span>
-        <FontAwesomeIcon icon={faCoffee} />
-      </span>
-      <span>
-        <Trans i18nKey="server.attemptToMakePOSTGETRequestWithCertificate" components={{ code: <code /> }} />
-      </span>
-    </div>
-  );
+export default function ItemTestWithValidCertificate({ url, clientKey, certificate, ca }) {
+  const { data, error } = useSWR(["/api/request-mtls-server", JSON.stringify({ url, key: clientKey, certificate, ca }), "POST"], fetcher);
+  if (error) {
+    return <StatusedItem i18nMessaKey="server.sucess200" status="FAIL" />;
+  }
+  if (data) {
+    return <StatusedItem i18nMessaKey="server.sucess200" status="OK" />;
+  }
+  return <StatusedItem i18nMessaKey="server.sucess200" status="LOADING" />;
 }

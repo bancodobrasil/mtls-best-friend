@@ -2,24 +2,19 @@ import React, { useState } from "react";
 import { Trans } from "react-i18next";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import ItemTestWithInvalidCertificate from "./itemTestWithInvalidCertificate";
+import ItemTestWithoutCertificate from "./itemTestWithoutCertificate";
 import ItemTestWithValidCertificate from "./itemTestWithValidCertificate";
 
 const Sweet = withReactContent(Swal);
 
 export default function SubmitRequestForm() {
   const [url, setURL] = useState();
-  const [key, setKey] = useState();
+  const [clientKey, setClientKey] = useState();
   const [certificate, setCertificate] = useState();
   const [ca, setCA] = useState();
 
   const submit = async () => {
-    // const requestOptions = {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ url, key, certificate, ca }),
-    // };
-    // const res = await fetch("/api/request-mtls-server", requestOptions);
-    // const remoteMTLSResponse = await res.json();
     Sweet.fire({
       title: (
         <div>
@@ -27,11 +22,21 @@ export default function SubmitRequestForm() {
           ...
         </div>
       ),
+      width: "600px",
       html: (
         <div>
-          <ul>
-            <li>
-              <ItemTestWithValidCertificate />
+          <h4 className="mt-4 mb-6">
+            <strong className="text-blue">{url}</strong>
+          </h4>
+          <ul className="flex flex-col items-center justify-center">
+            <li className="mb-2">
+              <ItemTestWithValidCertificate url={url} clientKey={clientKey} certificate={certificate} ca={ca} />
+            </li>
+            <li className="mb-2">
+              <ItemTestWithoutCertificate url={url} />
+            </li>
+            <li className="mb-2">
+              <ItemTestWithInvalidCertificate url={url} />
             </li>
           </ul>
         </div>
@@ -58,7 +63,7 @@ export default function SubmitRequestForm() {
             <Trans i18nKey="server.privateKeyLabelUpload" />
           </span>
           <textarea
-            onChange={(e) => setKey(e.target.value)}
+            onChange={(e) => setClientKey(e.target.value)}
             className="border font-mono text-sm mt-2 p-4"
             rows="8"
             placeholder={`-----BEGIN PRIVATE KEY-----

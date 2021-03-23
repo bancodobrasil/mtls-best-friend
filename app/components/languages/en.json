@@ -36,10 +36,14 @@
   "server.caLabelUpload": "Public <strong>CA certificate</strong> in Base64 PEM format used to sign the client certificate to be added as trusted authority:",
   "server.theTestStepsAre": "The test service does the following checks:",
   "server.URLToTest": "Your <strong>mTLS server</strong> endpoint URL to test:",
-  "server.attemptToMakePOSTGETRequestWithCertificate": "POST and GET resquest <strong>with</strong> the provided client certificate. Expected responde: <code>200 Success</code>",
+  "server.attemptToMakePOSTGETRequestWithCertificate": "POST and GET resquest <strong>with</strong> the provided client certificate. Expected response: <code>200 Success</code>",
   "server.attemptToMakeRegularRequestWithoutCertificate": "POST and GET request <strong>without</strong> client certificate. Expected response: <code>400 Bad Request</code>",
-  "server.attemptToMakePOSTGETRequestWithAnotherCertificate": "POST and GET resquest <strong>with an untrusted</strong> client certificate locally generated. Expected responde: <code>400 Bad Request</code>",
+  "server.attemptToMakePOSTGETRequestWithAnotherCertificate": "POST and GET resquest <strong>with an untrusted</strong> client certificate locally generated. Expected response: <code>400 Bad Request</code>",
   "server.TestingYourMTLSServer": "Testing your mTLS server",
+
+  "server.sucess200": "Expected response: <code>200 Success</code>",
+  "server.sucess400NoCert": "Expected response (no cert): <code>400 Bad Request</code>",
+  "server.sucess400InvalidCert": "Expected response (invalid cert): <code>400 Bad Request</code>",
 
   "Test now!": "Test now!"
 }
