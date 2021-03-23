@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Trans } from "next-i18next";
 
 import ItemTestWithInvalidCertificate from "./itemTestWithInvalidCertificate";
@@ -144,3 +145,11 @@ export default function SubmitRequestForm() {
     </div>
   );
 }
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

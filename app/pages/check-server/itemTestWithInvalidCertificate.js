@@ -10,13 +10,13 @@ export default function ItemTestWithInvalidCertificate({ url, method }) {
   const { data, error } = useSWR(["/api/request-mtls-server", JSON.stringify({ url, key, certificate, ca }), method], fetcher);
 
   if (error && error.info?.match(/error/g)) {
-    return <StatusedItem i18nMessaKey="sucess-400-invalid-cert" status="OK" prefix={method} />;
+    return <StatusedItem message="sucess-400-invalid-cert" status="OK" prefix={method} />;
   }
   if (error) {
-    return <StatusedItem i18nMessaKey="sucess-400-invalid-cert" status="FAIL" prefix={method} />;
+    return <StatusedItem message="sucess-400-invalid-cert" status="FAIL" prefix={method} />;
   }
   if (data) {
-    return <StatusedItem i18nMessaKey="sucess-400-invalid-cert" status="FAIL" prefix={method} />;
+    return <StatusedItem message="sucess-400-invalid-cert" status="FAIL" prefix={method} />;
   }
-  return <StatusedItem i18nMessaKey="sucess-400-invalid-cert" status="LOADING" prefix={method} />;
+  return <StatusedItem message="sucess-400-invalid-cert" status="LOADING" prefix={method} />;
 }

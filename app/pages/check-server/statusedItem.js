@@ -1,6 +1,5 @@
 import { faCheck, faTimes, faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function StatusedItem({ status = "off", prefix, message = "loading" }) {
   let statusIcon = faClock;
@@ -23,11 +22,3 @@ export default function StatusedItem({ status = "off", prefix, message = "loadin
     </div>
   );
 }
-
-export const getStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
-};

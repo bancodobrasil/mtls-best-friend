@@ -33,7 +33,6 @@ export default function Client() {
 
 export const getStaticProps = async ({ locale }) => {
   const trans = await serverSideTranslations(locale, ["common"]);
-  console.log("!!!!!!!", locale, JSON.stringify(trans));
   return {
     props: {
       ...trans,
