@@ -16,10 +16,10 @@ export default function Navbar() {
             <Link href="/"> Home</Link>
           </li>
           <li>
-            <Link href="/server"> Server </Link>
+            <Link href="/check-server"> Server </Link>
           </li>
           <li>
-            <Link href="/client"> Client</Link>
+            <Link href="/check-client"> Client</Link>
           </li>
           <li>
             <Link href="/sidecar"> Sidecar</Link>

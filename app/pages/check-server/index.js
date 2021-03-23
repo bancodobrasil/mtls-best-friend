@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Trans } from "react-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Trans } from "next-i18next";
 
 import Layout from "../../components/layout";
 import SubmitRequestForm from "./submitRequestForm";
@@ -20,22 +21,22 @@ export default function Server() {
           </h1>
 
           <p className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
-            <Trans i18nKey="server.headerTagLine" />
+            <Trans i18nKey="server-header-tagline" />
           </p>
 
           <div className="border-r border-b border-gray-200 rounded p-8">
             <Image src="/mTLS-server-test.png" alt="server requesting diagram" height={367} width={458} />
             <div className="mt-8">
-              <Trans i18nKey="server.theTestStepsAre" />
+              <Trans i18nKey="the-test-steps-are" />
               <ol className="ml-4 mt-2 list-decimal">
                 <li>
-                  <Trans i18nKey="server.attemptToMakePOSTGETRequestWithCertificate" components={{ code: <code /> }} />
+                  <Trans i18nKey="attempt-to-make-post-get-request-with-certificate" components={{ code: <code /> }} />
                 </li>
                 <li>
-                  <Trans i18nKey="server.attemptToMakeRegularRequestWithoutCertificate" components={{ code: <code /> }} />
+                  <Trans i18nKey="attempt-to-make-regular-request-without-certificate" components={{ code: <code /> }} />
                 </li>
                 <li>
-                  <Trans i18nKey="server.attemptToMakePOSTGETRequestWithAnotherCertificate" components={{ code: <code /> }} />
+                  <Trans i18nKey="attempt-to-make-post-get-request-with-another-certificate" components={{ code: <code /> }} />
                 </li>
               </ol>
             </div>
@@ -47,3 +48,11 @@ export default function Server() {
     </Layout>
   );
 }
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

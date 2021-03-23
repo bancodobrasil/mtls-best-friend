@@ -1,5 +1,8 @@
+import { appWithTranslation } from "next-i18next";
+
 import "../styles/tailwind.css";
 import "../styles/sweetalert-custom.css";
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+
+const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
+
+export default appWithTranslation(MyApp);

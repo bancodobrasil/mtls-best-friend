@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import Layout from "../../components/layout";
 
 export default function Ambassador() {
@@ -26,3 +28,11 @@ export default function Ambassador() {
     </Layout>
   );
 }
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { Trans } from "react-i18next";
 import Image from "next/image";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Trans } from "next-i18next";
 
 import Layout from "../../components/layout";
 
@@ -19,7 +20,7 @@ export default function Sidecar() {
           </h1>
 
           <p className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
-            <Trans i18nKey="sidecar.headerTagLine" />
+            <Trans i18nKey="sidecar-header-tag-line" />
           </p>
 
           <div className="border-r border-b border-gray-200 rounded p-8">
@@ -45,30 +46,30 @@ services:
           </div>
 
           <div className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto p-10 border border-gray-100 shadow-md text-white bg-gray-700">
-            <Trans i18nKey="sidecar.aFullExampleToDownload" components={{ a: <a /> }} />
+            <Trans i18nKey="sidecar-a-full-example-to-download" components={{ a: <a /> }} />
           </div>
 
           <div className="border-r border-t border-gray-200 rounded p-8">
-            <Trans i18nKey="sidecar.toPutYourmTLSSidecarToRun" />
+            <Trans i18nKey="put-your-mTLS-sidecar-to-run" />
 
             <ol className="ml-4 mt-2 list-decimal">
               <li>
-                <Trans i18nKey="sidecar.1serverPEMUsedToMakeTheTLS" />
+                <Trans i18nKey="server-pem-used-to-make-the-tls" />
               </li>
               <li>
-                <Trans i18nKey="sidecar.2serverKeyPEMAlsoUsed" />
+                <Trans i18nKey="server-key-pem-also-used" />
               </li>
               <li>
-                <Trans i18nKey="sidecar.3clientsCAPEMUsedToVerify" />
+                <Trans i18nKey="clients-ca-pem-used-to-verify" />
               </li>
             </ol>
             <p className="mt-4">
-              <Trans i18nKey="sidecar.certificateFilesListDescription" />
+              <Trans i18nKey="certificate-files-list-description" />
             </p>
           </div>
 
           <div className="border-l border-t border-gray-200 rounded p-8">
-            <Trans i18nKey="sidecar.downloadCertificateToTestLocalInstructions" components={{ code: <code /> }} />
+            <Trans i18nKey="download-certificate-to-test-local-instructions" components={{ code: <code /> }} />
             <ul className="list-disc ml-4 mt-4 mb-4">
               <li>
                 <a href="/demo/certs/server.pem" className="underline text-blue-600">
@@ -87,14 +88,14 @@ services:
               </li>
             </ul>
             <div className="mt-2">
-              <Trans i18nKey="sidecar.dockerComposeUpInstructions" />
+              <Trans i18nKey="docker-compose-up-instructions" />
               <div className="bg-gray-50 p-3 mt-2">
                 <code className="text-sm">$ docker-compose up</code>
               </div>
             </div>
 
             <div className="mt-2">
-              <Trans i18nKey="sidecar.curlToTestInstructions" />
+              <Trans i18nKey="curl-to-test-instructions" />
               <div className="bg-gray-50 p-3 mt-2">
                 <code className="text-sm">
                   $ curl --cacert ./clients-ca.pem --key ./client.key.pem --cert ./client.pem -k https://localhost
@@ -107,3 +108,11 @@ services:
     </Layout>
   );
 }
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

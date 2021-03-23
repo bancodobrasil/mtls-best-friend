@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Trans } from "react-i18next";
+import { Trans } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
 import Layout from "../components/layout";
 
 export default function Home() {
@@ -18,23 +20,23 @@ export default function Home() {
           </h1>
 
           <p className="col-span-1 md:col-span-2 max-w-screen-md mx-auto text-2xl text-center">
-            <Trans i18nKey="home.headerTagLine" components={{ code: <code /> }} />
+            <Trans i18nKey="home-header-tagline" components={{ code: <code /> }} />
           </p>
 
           <Link href="/server">
             <div className="card cursor-pointer">
               <h3 className="font-bold">mTLS Server Test &rarr;</h3>
               <p>
-                <Trans i18nKey="home.mtlsServerCardDescription" />
+                <Trans i18nKey="mtls-server-card-description" />
               </p>
             </div>
           </Link>
 
-          <Link href="/client">
+          <Link href="/check-client">
             <div className="card cursor-pointer">
               <h3 className="font-bold">mTLS Client Test &rarr;</h3>
               <p>
-                <Trans i18nKey="home.mtlsClientCardDescription" />
+                <Trans i18nKey="mtls-client-card-description" />
               </p>
             </div>
           </Link>
@@ -43,7 +45,7 @@ export default function Home() {
             <div className="card cursor-pointer">
               <h3 className="font-bold">Sidecar Proxy &rarr;</h3>
               <p>
-                <Trans i18nKey="home.sidecarProxyCardDescription" />
+                <Trans i18nKey="sidecar-proxy-card-description" />
               </p>
             </div>
           </Link>
@@ -52,7 +54,7 @@ export default function Home() {
             <div className="card cursor-pointer">
               <h3 className="font-bold">Ambassador Gateway &rarr;</h3>
               <p>
-                <Trans i18nKey="home.ambassadorGatewayCardDescription" />
+                <Trans i18nKey="ambassador-gateway-card-description" />
               </p>
             </div>
           </Link>
@@ -114,3 +116,11 @@ export default function Home() {
     </Layout>
   );
 }
+
+export const getStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};

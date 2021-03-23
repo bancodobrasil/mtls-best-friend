@@ -1,0 +1,53 @@
+{
+  "brought-to-you-by": "Brought to you by ",
+  "home-header-tagline": "Instantly test your mTLS <code>server</code> and <code>client</code> while getting some tips on how to easily setup up this mess.",
+
+  "mtls-server-card-description": "Upload an acceptable <strong>client certificate and key</strong> to test your mTLS server with one click from a ready to request online client with code examples.",
+
+  "mtls-client-card-description": "Download a <strong>client certificate and key</strong> to make a quick connection test from your application to a ready to ping mTLS server.",
+
+  "sidecar-proxy-card-description": "Leave the mTLS dirty job away from your API endpoints using this Sidecar Proxy Docker image, standalone on in your prefered cluster provider.",
+
+  "ambassador-gateway-card-description": "Need some help making a request to an mTLS server? This Ambassador Docker image got you covered! Make a regular request to it and it will handle the mTLS stuff.",
+
+  "sidecar-header-tag-line": "So, you want to secure an API using mTLS but you don't want to run on all the details of that or mess up your current code and infraestructure? If your answer is \"yes\", then the <strong>Sidecar Proxy</strong> is exactly what you need.",
+
+  "sidecar-a-full-example-to-download": "A full example including server and client certificates to download can be found at <a className=\"ml-1 underline\" href=\"https://github.com/bancodobrasil/api-mtls-sidecar-proxy\"> bancodobrasil/api-mtls-sidecar-proxy </a>",
+
+  "put-your-mTLS-sidecar-to-run": "To put your mTLS Sidecar Proxy to run you will have to get those 3 PEM files:",
+
+  "server-pem-used-to-make-the-tls": "<strong>server.pem</strong>: used to make the TLS (HTTPS) connection",
+  "server-key-pem-also-used": "<strong>server-key.pem</strong>: also used to make the TLS (HTTPS) connection",
+  "clients-ca-pem-used-to-verify": "<strong>clients-ca.pem</strong>: used to verify if the client certificates used on the incoming connections are accepted ones",
+
+  "certificate-files-list-description": "The server-key.pem and server.pem should be from a trustworthy Certification Authority, such as Let's Encrypt, Glogal Sign, Verisign, Digicert and so son. The clients-ca.pem must be an intermediate CA (could be self generated) that was used to generate the client certificates used in mTLS authentication process.",
+
+  "download-certificate-to-test-local-instructions": "To run locally, create a <code>docker-compose.yml</code> file like the one above, set the <code>PROXY_PASS</code> to a known website address, create a folder named <strong>certs</strong> and download the following certificates to this folder mapping it as volume to the <code>/etc/nginx/conf.d/certs</code> folder.",
+
+  "docker-compose-up-instructions": "After downloading the certificate to the <strong>certs</strong> folder, bring the container up:",
+
+  "curl-to-test-instructions": "And then make a curl to check this running:",
+
+  "server-header-tagline": "Are you setting up your server to authenticate mTLS, but you need some help with a simple client to quickly check whether your server connection configuration is working? Let's do it!",
+
+  "server-upload-instructions": "To test your server, first paste a client <strong>private key</strong> with its respective <strong>certificate</strong> and the <strong>CA public key</strong> you used to sign this client certificate and then click the <strong>\"test-now!\"</strong> button to send a test request to your mTLS server using the provided certificate to authenticate.",
+  "private-key-label-upload": "<strong>Client Key</strong> in Base64 PEM format:",
+  "certificate-label-upload": "<strong>Client Certificate</strong> in Base64 PEM format:",
+  "ca-label-upload": "Public <strong>CA certificate</strong> in Base64 PEM format used to sign the client certificate to be added as trusted authority:",
+  "the-test-steps-are": "The test service does the following checks:",
+  "url-to-test": "Your <strong>mTLS server</strong> endpoint URL to test:",
+  "attempt-to-make-post-get-request-with-certificate": "POST and GET resquest <strong>with</strong> the provided client certificate. Expected response: <code>200 Success</code> for the allowed method",
+  "attempt-to-make-regular-request-without-certificate": "POST and GET request <strong>without</strong> client certificate. Expected response: <code>400 Bad Request</code>",
+  "attempt-to-make-post-get-request-with-another-certificate": "POST and GET resquest <strong>with an untrusted</strong> client certificate locally generated. Expected response: <code>400 Bad Request</code>",
+  "testing-your-mtls-server": "Testing your mTLS server",
+
+  "sucess-200": "Expected response: <code>200 Success</code>",
+  "sucess-400-no-cert": "Expected response (no cert): <code>400 Bad Request</code>",
+  "sucess-400-invalid-cert": "Expected response (invalid cert): <code>400 Bad Request</code>",
+
+  "test-now": "Test Now",
+
+  "loading": "Loading",
+
+  "contribute-to-this-project-at": "Contribute to this project at"
+}

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Trans } from "react-i18next";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { Trans } from "next-i18next";
+
 import ItemTestWithInvalidCertificate from "./itemTestWithInvalidCertificate";
 import ItemTestWithoutCertificate from "./itemTestWithoutCertificate";
 import ItemTestWithValidCertificate from "./itemTestWithValidCertificate";
@@ -29,11 +30,13 @@ export default function SubmitRequestForm() {
     setMethods(mss);
   }, [methodGET, methodPOST]);
 
+  const title = "Testing your mTLS Server";
+
   const submit = async () => {
     Sweet.fire({
       title: (
         <div>
-          <Trans i18nKey="server.TestingYourMTLSServer" />
+          {title}
           ...
         </div>
       ),
@@ -68,18 +71,18 @@ export default function SubmitRequestForm() {
 
   return (
     <div className="border-l border-b border-gray-200 rounded p-8">
-      <Trans i18nKey="server.uploadInstructionsLine1" />
+      <Trans i18nKey="server-upload-instructions" />
 
       <div className="bg-gray-100 px-4 py-4 mt-4">
         <div className="flex flex-col">
           <span>
-            <Trans i18nKey="server.URLToTest" />
+            <Trans i18nKey="url-to-test" />
           </span>
           <input onChange={(e) => setURL(e.target.value)} placeholder="https://<your_mtls_endpoint>" className="border p-2" />
         </div>
         <div className="flex flex-col mt-4">
           <span>
-            <Trans i18nKey="server.privateKeyLabelUpload" />
+            <Trans i18nKey="private-key-label-upload" />
           </span>
           <textarea
             onChange={(e) => setClientKey(e.target.value)}
@@ -92,7 +95,7 @@ export default function SubmitRequestForm() {
         </div>
         <div className="flex flex-col mt-4">
           <span>
-            <Trans i18nKey="server.certificateLabelUpload" />
+            <Trans i18nKey="certificate-label-upload" />
           </span>
           <textarea
             onChange={(e) => setCertificate(e.target.value)}
@@ -106,7 +109,7 @@ export default function SubmitRequestForm() {
         </div>
         <div className="flex flex-col mt-4">
           <span>
-            <Trans i18nKey="server.caLabelUpload" />
+            <Trans i18nKey="ca-label-upload" />
           </span>
           <textarea
             onChange={(e) => setCA(e.target.value)}
@@ -133,12 +136,8 @@ export default function SubmitRequestForm() {
           </div>
         </div>
         <div className="mt-4 text-right">
-          <button
-            onClick={submit}
-            disabled={!url || !clientKey || !certificate || !ca || !methods || methods.length === 0}
-            className="bg-green-500 text-white px-5 py-1 text-2xl rounded shadow-xl disabled:opacity-20"
-          >
-            <Trans i18nKey="Test now!" />
+          <button onClick={submit} className="bg-green-500 text-white px-5 py-1 text-2xl rounded shadow-xl disabled:opacity-20">
+            <Trans i18nKey="test-now" />
           </button>
         </div>
       </div>

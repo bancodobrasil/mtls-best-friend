@@ -1,7 +1,11 @@
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+
 import Layout from "../../components/layout";
 
 export default function Client() {
+  const { t } = useTranslation("common");
   return (
     <Layout>
       <Head>
@@ -16,7 +20,7 @@ export default function Client() {
           </h1>
 
           <p className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
-            Contribute to this project at{" "}
+            {t("contribute-to-this-project-at")}{" "}
             <a href="https://github.com/bancodobrasil/mtls-best-friend" className="underline text-blue-600" target="_blank" rel="noreferer">
               https://github.com/bancodobrasil/mtls-best-friend
             </a>
@@ -26,3 +30,13 @@ export default function Client() {
     </Layout>
   );
 }
+
+export const getStaticProps = async ({ locale }) => {
+  const trans = await serverSideTranslations(locale, ["common"]);
+  console.log("!!!!!!!", locale, JSON.stringify(trans));
+  return {
+    props: {
+      ...trans,
+    },
+  };
+};
