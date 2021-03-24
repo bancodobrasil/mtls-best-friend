@@ -10,13 +10,13 @@ export default function ItemTestWithInvalidCertificate({ url, method }) {
   const { data, error } = useSWR(["/api/request-mtls-server", JSON.stringify({ url, method, key, certificate, ca })], fetcher);
 
   if (error && error.info?.match(/error/g)) {
-    return <StatusedItem message="bad-request-400-invalid-cert" status="OK" prefix={method} />;
+    return <StatusedItem message="Expected response (invalid cert): <code>400 Bad Request</code>" status="OK" prefix={method} />;
   }
   if (error) {
-    return <StatusedItem message="bad-request-400-invalid-cert" status="FAIL" prefix={method} />;
+    return <StatusedItem message="Expected response (invalid cert): <code>400 Bad Request</code>" status="FAIL" prefix={method} />;
   }
   if (data) {
-    return <StatusedItem message="bad-request-400-invalid-cert" status="FAIL" prefix={method} />;
+    return <StatusedItem message="Expected response (invalid cert): <code>400 Bad Request</code>" status="FAIL" prefix={method} />;
   }
-  return <StatusedItem message="bad-request-400-invalid-cert" status="LOADING" prefix={method} />;
+  return <StatusedItem message="Expected response (invalid cert): <code>400 Bad Request</code>" status="LOADING" prefix={method} />;
 }
