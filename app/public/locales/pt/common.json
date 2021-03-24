@@ -1,4 +1,57 @@
 {
   "contribute-to-mtls-bff-project-at": "Você pode contribuir com esse projeto em:",
-  "brought-to-you-by": "Desenvolvido por"
+  "brought-to-you-by": "Desenvolvido por",
+  
+  "home-header-tagline": "Teste instanteneamente <code>servidor</code> mTLS e <code>cliente</code> enquanto obtém dicas de como configurar facilmente essa bagunça.",
+
+  "mtls-server-card-description": "Faça o upload  de seu  <strong>certificado de cliente</strong> e da sua <strong>chave privada de cliente</strong> para testar o teu servidor mTLS com apenas um clique através de uma requisição pronta online com alguns exemplos de códigos.",
+
+  "mtls-client-card-description": "Baixe um <strong>certificado de cliente e chave</strong> e teste rapidamente a conexão e realize um ping no servidor mTLS através da tua aplicação.",
+
+  "sidecar-proxy-card-description": "Deixe toda a bagunça do mTLS longe das rotas da tua aplicação  utilizando este Sidecar Proxy Docker Image  autônomo em teu servidor favorito.",
+
+  "ambassador-gateway-card-description": "Precisando de ajuda para fazer uma solicitação a um servidor mTLS? Veio ao lugar certo! Essa imagem do Ambassador Docker tem o que você precisa! Faça uma requisição no serviço e ele cuidará de tudo relacionado ao mTLS.",
+
+  "sidecar-header-tag-line": "Então você quer garantir a segurança utilizando o mTLS sem misturar isso com teu projeto e bagunçar tudo? Se a tua resposta for \"sim\" então o <strong>Sidecar Proxy</strong> é exatamente o que você precisa.",
+
+  "sidecar-a-full-example-to-download": "Um exemplo completo com certificados de cliente e servidor para baixar pode ser encontrado em <a className=\"ml-1 underline\" href=\"https://github.com/bancodobrasil/api-mtls-sidecar-proxy\"> bancodobrasil/api-mtls-sidecar-proxy </a>",
+
+  "put-your-mTLS-sidecar-to-run": "Para colocar teu mTLS Sidecar Proxy em execução você precisa adquirir esses 3 arquivos PEM:",
+
+  "server-pem-used-to-make-the-tls": "<strong>server.pem</strong>: usado para fazer a conexão TLS (HTTPS)",
+  "server-key-pem-also-used": "<strong>server-key.pem</strong>: também utilizado para realizar conexão TLS (HTTPS)",
+  "clients-ca-pem-used-to-verify": "<strong>clients-ca.pem</strong>: usado para verificar se o certificado do cliente usado na conexão em andamento tem a permissão necessária",
+
+  "certificate-files-list-description": "O server-key.pem e o server.pem devem ser originários de uma Autoridade Certificadora confiável, tais como: Let's Encrypt, Glogal Sign, Verisign, Digicert e etc. O clients-ca.pem  deve ser um CA intermediário (pode inclusive ser gerado) que foi utilizado  para gerar o certificado do cliente utilizado no processo de autenticação mTLS.",
+
+  "download-certificate-to-test-local-instructions": "Para executar localmente, crie um <code>docker-compose.yml</code>, como no exemplo acima, e altere o <code>PROXY_PASS</code> para um endereço web conhecido, crie um arquivo com o nome <strong>certs</strong> e baixe os certificados dentro deste diretório e mapeie o volume para a pasta <code>/etc/nginx/conf.d/certs</code>.",
+
+  "docker-compose-up-instructions": "Depois de fazer o dowload da pasta <strong>certs</strong>, suba o container:",
+
+  "curl-to-test-instructions": "E faça um curl to checar se está em execução:",
+
+  "server-header-tagline": "Está configurando teu servidor para autenticação via mTLS, mas precisa de uma ajuda com um simples cliente capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
+
+  "server-upload-instructions": "Para testar teu servidor, primeiro coloque a <strong>chave privada</strong> do cliente com o seu respectivo <strong>certificado</strong> em seguida a <strong>chave pública (CA)</strong> que você usou para assinar o certificado do cliente, e então clique no botão <strong>\"test-now!\"</strong> para enviar uma requisição de teste para teu servidor mTLS usando o certificado fornecido para autenticação.",
+  "private-key-label-upload": "<strong>Client Key</strong> no formato Base64 PEM:",
+  "certificate-label-upload": "<strong>Client Certificate</strong> no formato Base64 PEM:",
+  "ca-label-upload": "(Opcional) <strong>CA certificate</strong> público no formato Base64 PEM usado para assinar o certificado do cliente uma uma autoridade confiável:",
+  "the-test-steps-are": "O serviço de teste faz as seguintes checagens:",
+  "url-to-test": "Tua rota para testar o <strong>mTLS server</strong>:",
+  "attempt-to-make-post-get-request-with-certificate": "Requisição POST e GET <strong>com</strong> o certificado de cliente fornecido. Resposta esperada: <code>200 Success</code> para o método permitido",
+  "attempt-to-make-regular-request-without-certificate": "Requisição POST e GET <strong>sem</strong> o certificado de cliente fornecido. Resposta esperada: <code>400 Bad Request</code> para o método permitido",
+  "attempt-to-make-post-get-request-with-another-certificate": "Requisição POST e GET <strong>utilizando um certificado não confiável</strong> certificado de cliente gerado localmente. Resposta esperada: <code>400 Bad Request</code>",
+  "testing-your-mtls-server": "Testando teu servidor mTLS",
+
+  "sucess-200": "Resposta esperada: <code>200 Success</code>",
+  "bad-request-400-no-cert": "Resposta esperada (sem certificado): <code>400 Bad Request</code>",
+  "bad-request-400-invalid-cert": "Resposta esperada (certificado invalido): <code>400 Bad Request</code>",
+
+  "test-now": "Teste agora",
+
+  "loading": "Carregando",
+
+  "check-a-sample-implementation-at": "Confira um exemplo de implementação em",
+  "get-a-sample-mtls-server-at": "Obtenha uma amostra do  servidor mTLS em"
 }
+
