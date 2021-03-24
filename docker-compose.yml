@@ -3,6 +3,6 @@ version: "3.7"
 services:
   frontend:
     image: local/mtls-best-friend:0.1.0
-    build: .
+    build: app
     ports:
       - 3003:3000
