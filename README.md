@@ -10,9 +10,23 @@ This project uses NextJS and TailwindCSS 2
 
 ## Getting Started
 
-To bring this project up and running, in the `app` folder:
+### Development
+
+To bring this project up and running in **dev** mode, in the `app` folder:
 
 ```bash
 yarn install
 yarn run dev
 ```
+
+Then open `http://localhost:3000`
+
+### Production with Docker
+
+To see this in **production** mode:
+
+```bash
+docker-compose up --build
+```
+
+Then open `http://localhost:3003`

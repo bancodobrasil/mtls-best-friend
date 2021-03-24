@@ -23,7 +23,7 @@ export default function Home() {
             <Trans i18nKey="home-header-tagline" components={{ code: <code /> }} />
           </p>
 
-          <Link href="/server">
+          <Link href="/check-server">
             <div className="card cursor-pointer">
               <h3 className="font-bold">mTLS Server Test &rarr;</h3>
               <p>

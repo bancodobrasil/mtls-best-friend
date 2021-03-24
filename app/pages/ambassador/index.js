@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 import Layout from "../../components/layout";
 
 export default function Ambassador() {
+  const { t } = useTranslation("common");
   return (
     <Layout>
       <Head>
@@ -17,12 +19,31 @@ export default function Ambassador() {
             <span className="text-blue-600 font-bold">TEST</span>
           </h1>
 
-          <p className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
-            Contribute to this project at{" "}
-            <a href="https://github.com/bancodobrasil/mtls-best-friend" className="underline text-blue-600" target="_blank" rel="noreferer">
-              https://github.com/bancodobrasil/mtls-best-friend
-            </a>
-          </p>
+          <div className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
+            <p className="mb-4">
+              {t("check-a-sample-implementation-at")}{" "}
+              <a
+                href="github.com/bancodobrasil/api-mtls-ambassador-gateway"
+                className="underline text-blue-600"
+                target="_blank"
+                rel="noreferer"
+              >
+                github.com/bancodobrasil/api-mtls-ambassador-gateway
+              </a>
+            </p>
+
+            <p className="text-sm">
+              {t("contribute-to-mtls-bff-project-at")}{" "}
+              <a
+                href="https://github.com/bancodobrasil/mtls-best-friend"
+                className="underline text-blue-600"
+                target="_blank"
+                rel="noreferer"
+              >
+                github.com/bancodobrasil/mtls-best-friend
+              </a>
+            </p>
+          </div>
         </main>
       </div>
     </Layout>

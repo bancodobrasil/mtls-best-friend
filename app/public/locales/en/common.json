@@ -33,7 +33,7 @@
   "server-upload-instructions": "To test your server, first paste a client <strong>private key</strong> with its respective <strong>certificate</strong> and the <strong>CA public key</strong> you used to sign this client certificate and then click the <strong>\"test-now!\"</strong> button to send a test request to your mTLS server using the provided certificate to authenticate.",
   "private-key-label-upload": "<strong>Client Key</strong> in Base64 PEM format:",
   "certificate-label-upload": "<strong>Client Certificate</strong> in Base64 PEM format:",
-  "ca-label-upload": "Public <strong>CA certificate</strong> in Base64 PEM format used to sign the client certificate to be added as trusted authority:",
+  "ca-label-upload": "(Optional) Public <strong>CA certificate</strong> in Base64 PEM format used to sign the client certificate to be added as trusted authority:",
   "the-test-steps-are": "The test service does the following checks:",
   "url-to-test": "Your <strong>mTLS server</strong> endpoint URL to test:",
   "attempt-to-make-post-get-request-with-certificate": "POST and GET resquest <strong>with</strong> the provided client certificate. Expected response: <code>200 Success</code> for the allowed method",
@@ -42,12 +42,14 @@
   "testing-your-mtls-server": "Testing your mTLS server",
 
   "sucess-200": "Expected response: <code>200 Success</code>",
-  "sucess-400-no-cert": "Expected response (no cert): <code>400 Bad Request</code>",
-  "sucess-400-invalid-cert": "Expected response (invalid cert): <code>400 Bad Request</code>",
+  "bad-request-400-no-cert": "Expected response (no cert): <code>400 Bad Request</code>",
+  "bad-request-400-invalid-cert": "Expected response (invalid cert): <code>400 Bad Request</code>",
 
   "test-now": "Test Now",
 
   "loading": "Loading",
 
-  "contribute-to-this-project-at": "Contribute to this project at"
+  "contribute-to-mtls-bff-project-at": "Contribute to mTLSBFF project at",
+  "check-a-sample-implementation-at": "Check a sample implementation at",
+  "get-a-sample-mtls-server-at": "Get a sample mTLS server at"
 }

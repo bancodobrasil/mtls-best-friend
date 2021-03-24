@@ -1,10 +1,22 @@
 const https = require("https");
 
-export default function handler(req, res) {
+module.exports = async (req, res) => {
   try {
+    const urlObj = new URL(req.body.url);
     https
       .get(
-        { href: req.body.url, method: "GET", rejectUnauthorized: false, cert: req.body.certificate, key: req.body.key, ca: req.body.ca },
+        {
+          host: urlObj.host,
+          hostname: urlObj.hostname,
+          port: urlObj.port,
+          path: urlObj.path,
+          pathname: urlObj.pathname,
+          method: req.body.method,
+          rejectUnauthorized: false,
+          cert: req.body.certificate,
+          key: req.body.key,
+          ca: req.body.ca,
+        },
         (resRemote) => {
           if (resRemote.statusCode !== 200) {
             console.error(`expected status 200 but found ${resRemote.statusCode}`);
@@ -24,4 +36,4 @@ export default function handler(req, res) {
     }
     return res.status(500).json({ message });
   }
-}
+};
