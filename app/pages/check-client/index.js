@@ -20,10 +20,10 @@ export default function Client() {
           </h1>
 
           <div className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
-            <p>
+            <p className="mb-4">
               {t("get-a-sample-mtls-server-at")}{" "}
               <a href="github.com/bancodobrasil/api-mtls-sidecar-proxy" className="underline text-blue-600" target="_blank" rel="noreferer">
-                github.com/bancodobrasil/api-mtls-sidecar-proxy
+                bancodobrasil/api-mtls-sidecar-proxy
               </a>
             </p>
 
@@ -35,7 +35,7 @@ export default function Client() {
                 target="_blank"
                 rel="noreferer"
               >
-                github.com/bancodobrasil/mtls-best-friend
+                bancodobrasil/mtls-best-friend
               </a>
             </p>
           </div>
