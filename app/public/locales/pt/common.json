@@ -1,16 +1,16 @@
 {
   "contribute-to-mtls-bff-project-at": "Você pode contribuir com esse projeto em:",
   "brought-to-you-by": "Desenvolvido por",
-  
-  "home-header-tagline": "Teste instanteneamente <code>servidor</code> mTLS e <code>cliente</code> enquanto obtém dicas de como configurar facilmente essa bagunça.",
 
-  "mtls-server-card-description": "Faça o upload  de seu  <strong>certificado de cliente</strong> e da sua <strong>chave privada de cliente</strong> para testar o teu servidor mTLS com apenas um clique através de uma requisição pronta online com alguns exemplos de códigos.",
+  "home-header-tagline": "Teste instantaneamente o seu <code>servidor</code> ou <code>cliente</code> mTLS e veja algumas formas de como configurar esses recursos.",
 
-  "mtls-client-card-description": "Baixe um <strong>certificado de cliente e chave</strong> e teste rapidamente a conexão e realize um ping no servidor mTLS através da tua aplicação.",
+  "mtls-server-card-description": "Forneça uma <strong>chave privada e um certificado cliente</strong> válidos e teste online o teu servidor mTLS com apenas um clique, além de conferir alguns exemplos de códigos.",
 
-  "sidecar-proxy-card-description": "Deixe toda a bagunça do mTLS longe das rotas da tua aplicação  utilizando este Sidecar Proxy Docker Image  autônomo em teu servidor favorito.",
+  "mtls-client-card-description": "Baixe um <strong>certificado e uma chave privada de cliente</strong> válidos e teste rapidamente a conexão a partir da sua aplicação realizando um ping em um servidor mTLS já configurado.",
 
-  "ambassador-gateway-card-description": "Precisando de ajuda para fazer uma solicitação a um servidor mTLS? Veio ao lugar certo! Essa imagem do Ambassador Docker tem o que você precisa! Faça uma requisição no serviço e ele cuidará de tudo relacionado ao mTLS.",
+  "sidecar-proxy-card-description": "Deixe toda a confusão do mTLS longe das rotas da sua aplicação utilizando essa imagem Docker de Sidecar Proxy em seu servidor favorito.",
+
+  "ambassador-gateway-card-description": "Precisando de ajuda para fazer uma requisição a um servidor mTLS? Veio ao lugar certo! Essa imagem Docker de Ambassador tem o que você precisa! Foque na construção da requisição e ele cuidará de tudo relacionado ao mTLS.",
 
   "sidecar-header-tag-line": "Então você quer garantir a segurança utilizando o mTLS sem misturar isso com teu projeto e bagunçar tudo? Se a tua resposta for \"sim\" então o <strong>Sidecar Proxy</strong> é exatamente o que você precisa.",
 
@@ -30,7 +30,7 @@
 
   "curl-to-test-instructions": "E faça um curl to checar se está em execução:",
 
-  "server-header-tagline": "Está configurando teu servidor para autenticação via mTLS, mas precisa de uma ajuda com um simples cliente capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
+  "server-header-tagline": "Tá configurando seu servidor para autenticação via mTLS, mas precisa de uma ajuda com um simples cliente capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
 
   "server-upload-instructions": "Para testar teu servidor, primeiro coloque a <strong>chave privada</strong> do cliente com o seu respectivo <strong>certificado</strong> em seguida a <strong>chave pública (CA)</strong> que você usou para assinar o certificado do cliente, e então clique no botão <strong>\"test-now!\"</strong> para enviar uma requisição de teste para teu servidor mTLS usando o certificado fornecido para autenticação.",
   "private-key-label-upload": "<strong>Client Key</strong> no formato Base64 PEM:",
@@ -54,4 +54,3 @@
   "check-a-sample-implementation-at": "Confira um exemplo de implementação em",
   "get-a-sample-mtls-server-at": "Obtenha uma amostra do  servidor mTLS em"
 }
-
