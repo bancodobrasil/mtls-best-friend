@@ -28,7 +28,7 @@ export default function Ambassador() {
                 target="_blank"
                 rel="noreferer"
               >
-                github.com/bancodobrasil/api-mtls-ambassador-gateway
+                bancodobrasil/api-mtls-ambassador-gateway
               </a>
             </p>
 
@@ -40,7 +40,7 @@ export default function Ambassador() {
                 target="_blank"
                 rel="noreferer"
               >
-                github.com/bancodobrasil/mtls-best-friend
+                bancodobrasil/mtls-best-friend
               </a>
             </p>
           </div>
