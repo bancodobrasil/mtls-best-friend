@@ -30,7 +30,7 @@
 
   "curl-to-test-instructions": "E faça um curl to checar se está em execução:",
 
-  "server-header-tagline": "Tá configurando seu servidor para autenticação via mTLS, mas precisa de uma ajuda com um simples cliente capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
+  "server-header-tagline": "Você está configurando seu servidor para autenticação via mTLS, mas precisa de uma ajuda com um cliente simples capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
 
   "server-upload-instructions": "Para testar seu servidor, primeiro coloque a <strong>chave privada</strong> do cliente com o seu respectivo <strong>certificado</strong> e em seguida, opcionalmente, a <strong>chave pública da CA</strong> que você usou para assinar o certificado do servidor (caso dos autoassinados). Feito isso, clique no botão <strong>\"Testar agora\"</strong> para enviar uma requisição via mTLS para seu servidor usando as credenciais fornecidas.",
   "private-key-label-upload": "<strong>Client Key</strong> no formato Base64 PEM:",
