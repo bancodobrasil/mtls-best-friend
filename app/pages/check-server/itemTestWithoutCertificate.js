@@ -3,7 +3,7 @@ import { fetcher } from "../../components/fetcher";
 import StatusedItem from "./statusedItem";
 
 export default function ItemTestWithoutCertificate({ url, method }) {
-  const { data, error } = useSWR(["/api/request-mtls-server", JSON.stringify({ url }), method], fetcher);
+  const { data, error } = useSWR(["/api/request-mtls-server", JSON.stringify({ url, method })], fetcher);
   if (error && error.info?.match(/required/g)) {
     return <StatusedItem message="sucess-400-no-cert" status="OK" prefix={method} />;
   }

@@ -1,6 +1,6 @@
-export const fetcher = async (url, body, method) => {
+export const fetcher = async (url, body) => {
   const reqOptions = {
-    method: method,
+    method: "POST",
     headers: { "Content-Type": "application/json" },
     body: body,
   };
