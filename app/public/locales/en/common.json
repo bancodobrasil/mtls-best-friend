@@ -42,8 +42,8 @@
   "testing-your-mtls-server": "Testing your mTLS server",
 
   "sucess-200": "Expected response: <code>200 Success</code>",
-  "sucess-400-no-cert": "Expected response (no cert): <code>400 Bad Request</code>",
-  "sucess-400-invalid-cert": "Expected response (invalid cert): <code>400 Bad Request</code>",
+  "bad-request-400-no-cert": "Expected response (no cert): <code>400 Bad Request</code>",
+  "bad-request-400-invalid-cert": "Expected response (invalid cert): <code>400 Bad Request</code>",
 
   "test-now": "Test Now",
 
