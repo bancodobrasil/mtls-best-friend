@@ -32,12 +32,12 @@
 
   "server-header-tagline": "Tá configurando seu servidor para autenticação via mTLS, mas precisa de uma ajuda com um simples cliente capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
 
-  "server-upload-instructions": "Para testar teu servidor, primeiro coloque a <strong>chave privada</strong> do cliente com o seu respectivo <strong>certificado</strong> em seguida a <strong>chave pública (CA)</strong> que você usou para assinar o certificado do cliente, e então clique no botão <strong>\"test-now!\"</strong> para enviar uma requisição de teste para teu servidor mTLS usando o certificado fornecido para autenticação.",
+  "server-upload-instructions": "Para testar seu servidor, primeiro coloque a <strong>chave privada</strong> do cliente com o seu respectivo <strong>certificado</strong> e em seguida, opcionalmente, a <strong>chave pública da CA</strong> que você usou para assinar o certificado do servidor (caso dos autoassinados). Feito isso, clique no botão <strong>\"Testar agora\"</strong> para enviar uma requisição via mTLS para seu servidor usando as credenciais fornecidas.",
   "private-key-label-upload": "<strong>Client Key</strong> no formato Base64 PEM:",
   "certificate-label-upload": "<strong>Client Certificate</strong> no formato Base64 PEM:",
-  "ca-label-upload": "(Opcional) <strong>CA certificate</strong> público no formato Base64 PEM usado para assinar o certificado do cliente uma uma autoridade confiável:",
+  "ca-label-upload": "(Opcional) <strong>CA certificate</strong> público no formato Base64 PEM usado para assinar o certificado do servidor (caso seja autoassinado):",
   "the-test-steps-are": "O serviço de teste faz as seguintes checagens:",
-  "url-to-test": "Tua rota para testar o <strong>mTLS server</strong>:",
+  "url-to-test": "Sua rota para testar o <strong>mTLS server</strong>:",
   "attempt-to-make-post-get-request-with-certificate": "Requisição POST e GET <strong>com</strong> o certificado de cliente fornecido. Resposta esperada: <code>200 Success</code> para o método permitido",
   "attempt-to-make-regular-request-without-certificate": "Requisição POST e GET <strong>sem</strong> o certificado de cliente fornecido. Resposta esperada: <code>400 Bad Request</code> para o método permitido",
   "attempt-to-make-post-get-request-with-another-certificate": "Requisição POST e GET <strong>utilizando um certificado não confiável</strong> certificado de cliente gerado localmente. Resposta esperada: <code>400 Bad Request</code>",
@@ -47,7 +47,7 @@
   "bad-request-400-no-cert": "Resposta esperada (sem certificado): <code>400 Bad Request</code>",
   "bad-request-400-invalid-cert": "Resposta esperada (certificado invalido): <code>400 Bad Request</code>",
 
-  "test-now": "Teste agora",
+  "test-now": "Testar agora",
 
   "loading": "Carregando",
 
