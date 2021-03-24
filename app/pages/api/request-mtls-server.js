@@ -1,7 +1,9 @@
 const https = require("https");
 
-export default function handler(req, res) {
+module.exports = async (req, res) => {
   try {
+    console.log("====>> REQ BODY", JSON.stringify(req.body));
+
     https
       .get(
         { href: req.body.url, method: "GET", rejectUnauthorized: false, cert: req.body.certificate, key: req.body.key, ca: req.body.ca },
@@ -24,4 +26,4 @@ export default function handler(req, res) {
     }
     return res.status(500).json({ message });
   }
-}
+};
