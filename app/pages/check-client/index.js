@@ -21,6 +21,13 @@ export default function Client() {
 
           <div className="col-span-1 md:col-span-2 max-w-screen-lg mx-auto text-center text-2xl">
             <p>
+              {t("get-a-sample-mtls-server-at")}{" "}
+              <a href="github.com/bancodobrasil/api-mtls-sidecar-proxy" className="underline text-blue-600" target="_blank" rel="noreferer">
+                github.com/bancodobrasil/api-mtls-sidecar-proxy
+              </a>
+            </p>
+
+            <p className="text-sm">
               {t("contribute-to-mtls-bff-project-at")}{" "}
               <a
                 href="https://github.com/bancodobrasil/mtls-best-friend"
@@ -29,12 +36,6 @@ export default function Client() {
                 rel="noreferer"
               >
                 github.com/bancodobrasil/mtls-best-friend
-              </a>
-            </p>
-            <p>
-              {t("get-a-sample-mtls-server-at")}{" "}
-              <a href="github.com/bancodobrasil/api-mtls-sidecar-proxy" className="underline text-blue-600" target="_blank" rel="noreferer">
-                github.com/bancodobrasil/api-mtls-sidecar-proxy
               </a>
             </p>
           </div>
