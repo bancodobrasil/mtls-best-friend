@@ -30,7 +30,7 @@
 
   "server-header-tagline": "Are you setting up your server to authenticate mTLS, but you need some help with a simple client to quickly check whether your server connection configuration is working? Let's do it!",
 
-  "server-upload-instructions": "To test your server, first paste a client <strong>private key</strong> with its respective <strong>certificate</strong> and the <strong>CA public key</strong> you used to sign this client certificate and then click the <strong>\"test-now!\"</strong> button to send a test request to your mTLS server using the provided certificate to authenticate.",
+  "server-upload-instructions": "To test your server, first paste a client <strong>private key</strong> with its respective <strong>certificate</strong> and, optionally, the <strong>CA public key</strong> used to sign the server certificate (if self-signed, for example) and then click the <strong>\"Test now\"</strong> button to send a request to your mTLS server using the provided credentials.",
   "private-key-label-upload": "<strong>Client Key</strong> in Base64 PEM format:",
   "certificate-label-upload": "<strong>Client Certificate</strong> in Base64 PEM format:",
   "ca-label-upload": "(Optional) Public <strong>server CA certificate</strong> in Base64 PEM format to be added as trusted authority in the request:",
