@@ -1,5 +1,5 @@
 {
-  "contribute-to-mtls-bff-project-at": "Você pode contribuir com esse projeto em:",
+  "contribute-to-mtls-bff-project-at": "Contribua com esse projeto em",
   "brought-to-you-by": "Desenvolvido por",
 
   "home-header-tagline": "Teste instantaneamente o seu <code>servidor</code> ou <code>cliente</code> mTLS e veja algumas formas de como configurar esses recursos.",
@@ -29,8 +29,10 @@
   "docker-compose-up-instructions": "Depois de fazer o download na pasta <strong>certs</strong>, suba o container:",
 
   "curl-to-test-instructions": "E faça um <code>curl</code> para conferir a execução:",
+  "curl-to-test-certificates": "Você pode executar um <code>curl</code> para testar a client key e o client certificate",
 
-  "server-header-tagline": "Você está configurando seu servidor para autenticação via mTLS, mas precisa de uma ajuda com um cliente simples capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
+  "server-header-tagline": "Você está configurando seu servidor para autenticação via mTLS, mas precisa de um cliente de teste simples capaz de conferir se a conexão está funcionando corretamente? Deixa eu te ajudar!",
+  "client-header-tagline": "Você está configurando uma aplicação cliente para autenticação via mTLS, mas precisa de um servidor de testes simples e pré-configurado para conferir se a conexão está funcionando corretamente? Você está no lugar certo!",
 
   "server-upload-instructions": "Para testar seu servidor, primeiro coloque a <strong>chave privada</strong> do cliente com o seu respectivo <strong>certificado</strong> e em seguida, opcionalmente, a <strong>chave pública da CA</strong> que você usou para assinar o certificado do servidor (caso dos autoassinados). Feito isso, clique no botão <strong>\"Testar agora\"</strong> para enviar uma requisição via mTLS para seu servidor usando as credenciais fornecidas.",
   "private-key-label-upload": "<strong>Client Key</strong> no formato Base64 PEM:",
@@ -52,5 +54,12 @@
   "loading": "Carregando",
 
   "check-a-sample-implementation-at": "Confira um exemplo de implementação em",
-  "get-a-sample-mtls-server-at": "Confira um exemplo de servidor mTLS em"
+  "get-a-sample-mtls-server-at": "Confira um exemplo de servidor mTLS em",
+  "steps-followed-to-the-test-server": "Para testar a sua aplicação cliente realizando requisições para o nosso servidor com mTLS pré-configurado, siga os seguintes passos",
+  "download-the-client-key-and-certificate": "Baixe a <1>client key</1> e o <1>client certificate</1> para utilizar na sua aplicação cliente",
+  "download-client-key": "Baixar a client key",
+  "download-client-certificate": "Baixar o client certificate",
+  "download-server-ca-to-add-to-trust": "Baixe a CA do certificado usado no servidor de teste para garantir que ele será aceito pela sua aplicação cliente",
+  "download-server-ca": "Baixar a CA do certificado do servidor de teste",
+  "send-the-request-to-test-server-at": "Envie as requisições da sua aplicação cliente para"
 }

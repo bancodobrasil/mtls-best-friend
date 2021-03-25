@@ -23,7 +23,7 @@ export default function Ambassador() {
             <p className="mb-4">
               {t("check-a-sample-implementation-at")}{" "}
               <a
-                href="github.com/bancodobrasil/api-mtls-ambassador-gateway"
+                href="https://github.com/bancodobrasil/api-mtls-ambassador-gateway"
                 className="underline text-blue-600"
                 target="_blank"
                 rel="noreferer"

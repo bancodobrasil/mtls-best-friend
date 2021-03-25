@@ -95,10 +95,10 @@ services:
             </div>
 
             <div className="mt-2">
-              <Trans i18nKey="curl-to-test-instructions" />
+              <Trans i18nKey="curl-to-test-instructions" components={{ code: <code /> }} />
               <div className="bg-gray-50 p-3 mt-2">
                 <code className="text-sm">
-                  $ curl --cacert ./clients-ca.pem --key ./client.key.pem --cert ./client.pem -k https://localhost
+                  $ curl --cacert ./server-ca.pem --key ./client-key.pem --cert ./client.pem -k https://localhost
                 </code>
               </div>
             </div>

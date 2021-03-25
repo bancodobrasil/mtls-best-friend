@@ -27,8 +27,10 @@
   "docker-compose-up-instructions": "After downloading the certificate to the <strong>certs</strong> folder, bring the container up:",
 
   "curl-to-test-instructions": "And then make a curl to check this running:",
+  "curl-to-test-certificates": "You could make a <code>curl</code> to test the key and certificates",
 
-  "server-header-tagline": "Are you setting up your server to authenticate mTLS, but you need some help with a simple client to quickly check whether your server connection configuration is working? Let's do it!",
+  "server-header-tagline": "Are you setting up your server to authenticate with mTLS, but you need some help with a simple client to quickly check whether your server connection configuration is working? Let's do it!",
+  "client-header-tagline": "Are you setting up a client to authenticate with mTLS, but you need some help with a simple server to quickly check whether your client connection configuration is working? Check this!",
 
   "server-upload-instructions": "To test your server, first paste a client <strong>private key</strong> with its respective <strong>certificate</strong> and, optionally, the <strong>CA public key</strong> used to sign the server certificate (if self-signed, for example) and then click the <strong>\"Test now\"</strong> button to send a request to your mTLS server using the provided credentials.",
   "private-key-label-upload": "<strong>Client Key</strong> in Base64 PEM format:",
@@ -51,5 +53,12 @@
 
   "contribute-to-mtls-bff-project-at": "Contribute to mTLSBFF project at",
   "check-a-sample-implementation-at": "Check a sample implementation at",
-  "get-a-sample-mtls-server-at": "Get a sample mTLS server at"
+  "get-a-sample-mtls-server-at": "Get a sample mTLS server at",
+  "steps-followed-to-the-test-server": "In order to test your client application sending requests to our pre-configured mTLS test server, follow those steps:",
+  "download-the-client-key-and-certificate": "Download the <1>client key</1> and the <1>client certificate</1> to use in your client application",
+  "download-client-key": "Download the client key",
+  "download-client-certificate": "Download the client certificate",
+  "download-server-ca-to-add-to-trust": "Download the test server CA to add it as a trusted server certificate",
+  "download-server-ca": "Download the test server CA",
+  "send-the-request-to-test-server-at": "Send the requests from your client application to"
 }
