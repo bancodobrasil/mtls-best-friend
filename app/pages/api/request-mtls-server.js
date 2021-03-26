@@ -1,8 +1,13 @@
 const https = require("https");
+const sslCertificate = require("get-ssl-certificate");
 
 module.exports = async (req, res) => {
   try {
     const urlObj = new URL(req.body.url);
+
+    // add the certificate from the server as trust on the fly
+    const serverCertificate = await sslCertificate.get(urlObj.hostname);
+
     https
       .get(
         {
@@ -15,7 +20,7 @@ module.exports = async (req, res) => {
           rejectUnauthorized: false,
           cert: req.body.certificate,
           key: req.body.key,
-          ca: req.body.ca,
+          ca: serverCertificate.pemEncoded,
         },
         (resRemote) => {
           if (resRemote.statusCode !== 200) {
@@ -30,6 +35,7 @@ module.exports = async (req, res) => {
         res.status(500).json({ message: "Error requesting to mTLS server" });
       });
   } catch (error) {
+    console.error(error);
     const message = "Error preparing the mTLS request. Details:" + error;
     if (error.toString().match(/no start line/g)) {
       return res.status(400).json({ message });

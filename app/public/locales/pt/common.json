@@ -1,5 +1,5 @@
 {
-  "contribute-to-mtls-bff-project-at": "Você pode contribuir com esse projeto em:",
+  "contribute-to-mtls-bff-project-at": "Contribua com esse projeto em",
   "brought-to-you-by": "Desenvolvido por",
 
   "home-header-tagline": "Teste instantaneamente o seu <code>servidor</code> ou <code>cliente</code> mTLS e veja algumas formas de como configurar esses recursos.",
@@ -12,25 +12,36 @@
 
   "ambassador-gateway-card-description": "Precisando de ajuda para fazer uma requisição a um servidor mTLS? Veio ao lugar certo! Essa imagem Docker de Ambassador tem o que você precisa! Foque na construção da requisição e ele cuidará de tudo relacionado ao mTLS.",
 
-  "sidecar-header-tag-line": "Então você quer garantir a segurança utilizando mTLS sem misturar isso com a lógica da sua aplicação? Se a tua resposta for \"sim\", então o <strong>Sidecar Proxy</strong> é exatamente o que você precisa.",
+  "sidecar-header-tag-line": "Então você precisa expor uma API utilizando segurança mTLS e não quer misturar isso tudo com as regras de negócio? Se a tua resposta for \"sim\", então o <strong>Sidecar Proxy</strong> é exatamente o que você precisa.",
+  "ambassador-header-tag-line": "Se você precisa acessar uma API protegida por mTLS a partir de sua aplicação e não quer misturar no seu código essa lógica toda de segurança, o <strong>Ambassador Gateway</strong> é exatamente o que você precisa.",
 
   "sidecar-a-full-example-to-download": "Um exemplo completo com certificados de cliente e servidor para baixar pode ser encontrado em <a className=\"ml-1 underline\" href=\"https://github.com/bancodobrasil/api-mtls-sidecar-proxy\"> bancodobrasil/api-mtls-sidecar-proxy </a>",
+  "ambassador-a-full-example-to-download": "Um exemplo completo com certificados de cliente e servidor para baixar pode ser encontrado em <a className=\"ml-1 underline\" href=\"https://github.com/bancodobrasil/api-mtls-ambassador-gateway\"> bancodobrasil/api-mtls-ambassador-gateway </a>",
 
-  "put-your-mTLS-sidecar-to-run": "Para colocar seu mTLS Sidecar Proxy em execução você precisa adquirir esses 3 arquivos PEM:",
+  "put-your-mTLS-sidecar-to-run": "Para colocar seu mTLS Sidecar Proxy em ação você precisa ter esses 3 arquivos PEM:",
+  "put-your-mTLS-ambassador-to-run": "Para colocar seu mTLS Ambassador Gateway em ação você precisa ter esses 3 arquivos PEM:",
 
   "server-pem-used-to-make-the-tls": "<strong>server.pem</strong>: usado para fazer a conexão TLS (HTTPS)",
   "server-key-pem-also-used": "<strong>server-key.pem</strong>: também utilizado para realizar conexão TLS (HTTPS)",
   "clients-ca-pem-used-to-verify": "<strong>clients-ca.pem</strong>: usado para verificar se o certificado do cliente usado na conexão em andamento tem a permissão necessária",
 
-  "certificate-files-list-description": "O server-key.pem e o server.pem devem ser originários de uma Autoridade Certificadora confiável, tais como: Let's Encrypt, Glogal Sign, Verisign, Digicert e etc. O clients-ca.pem deve ser o certificado de uma CA intermediária (pode inclusive ser gerada) que foi utilizado para assinar o certificado cliente utilizado no processo de autenticação mTLS.",
+  "client-pem-used-to-make-the-tls": "<strong>client.pem</strong>: usado para realizar a conexão mTLS como cliente",
+  "client-key-pem-also-used": "<strong>client-key.pem</strong>: também utilizado para realizar a conexão mTLS como cliente",
+  "server-ca-pem-used-to-verify": "(Opcional) <strong>server-ca.pem</strong>: caso a variável de ambiente PROXY_SSL_VERIFY=on é necessário indicar um certificado público da CA que assinou o certificado do servidor de destino para ele ser reconhecido como confiável pelo Ambassador",
 
-  "download-certificate-to-test-local-instructions": "Para executar localmente, crie um <code>docker-compose.yml</code>, como no exemplo acima, e altere o <code>PROXY_PASS</code> para um endereço web conhecido, crie um arquivo com o nome <strong>certs</strong> e baixe os certificados dentro deste diretório mapeando o volume para a pasta <code>/etc/nginx/conf.d/certs</code>.",
+  "certificate-files-list-description": "O recomendado é que o <strong>server-key.pem</strong> e o <strong>server.pem</strong> sejam originários de uma Autoridade Certificadora pública confiável, tais como: Let's Encrypt, Glogal Sign, Verisign, Digicert e etc. O <strong>clients-ca.pem</strong> deve ser o certificado de uma CA intermediária (pode inclusive ser autoassinada) que foi utilizado para assinar o certificado cliente utilizado no processo de autenticação mTLS.",
+  "ambassador-certificate-files-list-description": "Para começar a usar o Ambassador, crie um <code>docker-compose.yml</code> - como no exemplo acima -, altere o <code>PROXY_PASS</code> para o endereço do mTLS server para o qual você quer fazer a requisição, crie uma pasta com o nome <strong>certs</strong> e baixe uma chave e certificado cliente válidos e autorizados para esse endpoint para dentro dessa pasta mapeando um volume a partir dela para <code>/etc/nginx/conf.d/certs</code>.",
+
+  "download-certificate-to-test-local-instructions": "Para rodar localmente, crie um <code>docker-compose.yml</code> - como no exemplo acima -, altere o <code>PROXY_PASS</code> para um endereço web conhecido, crie uma pasta com o nome <strong>certs</strong> e baixe os seguintes certificados dentro dela mapeando o volume para a pasta <code>/etc/nginx/conf.d/certs</code>.",
+  "ambassador-download-trusted-client-certificate-to-test-local-instructions": "Se quiser rodar um teste local para ver o Ambassador funcionando, crie um <code>docker-compose.yml</code> - como no exemplo acima -, altere o <code>PROXY_PASS</code> para <strong>https://sidecar.mtls.labbs.com.br</strong>, crie uma pasta com o nome <strong>certs</strong> e baixe os seguintes certificados dentro dela mapeando o volume desse diretório para <code>/etc/nginx/conf.d/certs</code>:",
 
   "docker-compose-up-instructions": "Depois de fazer o download na pasta <strong>certs</strong>, suba o container:",
 
   "curl-to-test-instructions": "E faça um <code>curl</code> para conferir a execução:",
+  "curl-to-test-certificates": "Você pode executar um <code>curl</code> para testar a client key e o client certificate",
 
-  "server-header-tagline": "Você está configurando seu servidor para autenticação via mTLS, mas precisa de uma ajuda com um cliente simples capaz de conferir rapidamente se a conexão está funcionando corretamente? Deixa eu te ajudar!",
+  "server-header-tagline": "Você está configurando seu servidor para autenticação via mTLS, mas precisa de um cliente de teste simples capaz de conferir se a conexão está funcionando corretamente? Deixa eu te ajudar!",
+  "client-header-tagline": "Você está configurando uma aplicação cliente para autenticação via mTLS, mas precisa de um servidor de testes simples e pré-configurado para conferir se a conexão está funcionando corretamente? Você está no lugar certo!",
 
   "server-upload-instructions": "Para testar seu servidor, primeiro coloque a <strong>chave privada</strong> do cliente com o seu respectivo <strong>certificado</strong> e em seguida, opcionalmente, a <strong>chave pública da CA</strong> que você usou para assinar o certificado do servidor (caso dos autoassinados). Feito isso, clique no botão <strong>\"Testar agora\"</strong> para enviar uma requisição via mTLS para seu servidor usando as credenciais fornecidas.",
   "private-key-label-upload": "<strong>Client Key</strong> no formato Base64 PEM:",
@@ -52,5 +63,12 @@
   "loading": "Carregando",
 
   "check-a-sample-implementation-at": "Confira um exemplo de implementação em",
-  "get-a-sample-mtls-server-at": "Confira um exemplo de servidor mTLS em"
+  "get-a-sample-mtls-server-at": "Confira um exemplo de servidor mTLS em",
+  "steps-followed-to-the-test-server": "Para testar a sua aplicação cliente realizando requisições para o nosso servidor com mTLS pré-configurado, siga os seguintes passos",
+  "download-the-client-key-and-certificate": "Baixe a <1>client key</1> e o <1>client certificate</1> para utilizar na sua aplicação cliente",
+  "download-client-key": "Baixar a client key",
+  "download-client-certificate": "Baixar o client certificate",
+  "download-server-ca-to-add-to-trust": "Baixe a CA do certificado usado no servidor de teste para garantir que ele será aceito pela sua aplicação cliente",
+  "download-server-ca": "Baixar a CA do certificado do servidor de teste",
+  "send-the-request-to-test-server-at": "Envie as requisições da sua aplicação cliente para"
 }

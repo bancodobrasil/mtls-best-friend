@@ -33,10 +33,10 @@ version: "3.7"
 
 services:
   mtls-sidecar:
-    image: labbsr0x/api-mtls-sidecar-proxy:0.0.1
+    image: labbsr0x/api-mtls-sidecar-proxy:0.0.2
     environment:
       - PROXY_PASS=http://<your_API_router_endpoint>
-      - ALLOWED_SSL_CLIENT_S_DN=all
+      - ALLOWED_CERTIFICATE_FINGERPRINT=all
     volumes:
       - ./path/to/certs:/etc/nginx/conf.d/certs
     ports:
@@ -83,7 +83,7 @@ services:
               </li>
               <li>
                 <a href="/demo/certs/clients-ca.pem" className="underline text-blue-600">
-                  clientes-ca.pem
+                  clients-ca.pem
                 </a>
               </li>
             </ul>
@@ -95,10 +95,10 @@ services:
             </div>
 
             <div className="mt-2">
-              <Trans i18nKey="curl-to-test-instructions" />
+              <Trans i18nKey="curl-to-test-instructions" components={{ code: <code /> }} />
               <div className="bg-gray-50 p-3 mt-2">
                 <code className="text-sm">
-                  $ curl --cacert ./clients-ca.pem --key ./client.key.pem --cert ./client.pem -k https://localhost
+                  $ curl --cacert ./server-ca.pem --key ./client-key.pem --cert ./client.pem -k https://localhost
                 </code>
               </div>
             </div>
