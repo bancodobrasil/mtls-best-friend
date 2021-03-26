@@ -12,19 +12,28 @@
 
   "ambassador-gateway-card-description": "Precisando de ajuda para fazer uma requisição a um servidor mTLS? Veio ao lugar certo! Essa imagem Docker de Ambassador tem o que você precisa! Foque na construção da requisição e ele cuidará de tudo relacionado ao mTLS.",
 
-  "sidecar-header-tag-line": "Então você quer garantir a segurança utilizando mTLS sem misturar isso com a lógica da sua aplicação? Se a tua resposta for \"sim\", então o <strong>Sidecar Proxy</strong> é exatamente o que você precisa.",
+  "sidecar-header-tag-line": "Então você precisa expor uma API utilizando segurança mTLS e não quer misturar isso tudo com as regras de negócio? Se a tua resposta for \"sim\", então o <strong>Sidecar Proxy</strong> é exatamente o que você precisa.",
+  "ambassador-header-tag-line": "Se você precisa acessar uma API protegida por mTLS a partir de sua aplicação e não quer misturar no seu código essa lógica toda de segurança, o <strong>Ambassador Gateway</strong> é exatamente o que você precisa.",
 
   "sidecar-a-full-example-to-download": "Um exemplo completo com certificados de cliente e servidor para baixar pode ser encontrado em <a className=\"ml-1 underline\" href=\"https://github.com/bancodobrasil/api-mtls-sidecar-proxy\"> bancodobrasil/api-mtls-sidecar-proxy </a>",
+  "ambassador-a-full-example-to-download": "Um exemplo completo com certificados de cliente e servidor para baixar pode ser encontrado em <a className=\"ml-1 underline\" href=\"https://github.com/bancodobrasil/api-mtls-ambassador-gateway\"> bancodobrasil/api-mtls-ambassador-gateway </a>",
 
-  "put-your-mTLS-sidecar-to-run": "Para colocar seu mTLS Sidecar Proxy em execução você precisa adquirir esses 3 arquivos PEM:",
+  "put-your-mTLS-sidecar-to-run": "Para colocar seu mTLS Sidecar Proxy em ação você precisa ter esses 3 arquivos PEM:",
+  "put-your-mTLS-ambassador-to-run": "Para colocar seu mTLS Ambassador Gateway em ação você precisa ter esses 3 arquivos PEM:",
 
   "server-pem-used-to-make-the-tls": "<strong>server.pem</strong>: usado para fazer a conexão TLS (HTTPS)",
   "server-key-pem-also-used": "<strong>server-key.pem</strong>: também utilizado para realizar conexão TLS (HTTPS)",
   "clients-ca-pem-used-to-verify": "<strong>clients-ca.pem</strong>: usado para verificar se o certificado do cliente usado na conexão em andamento tem a permissão necessária",
 
-  "certificate-files-list-description": "O server-key.pem e o server.pem devem ser originários de uma Autoridade Certificadora confiável, tais como: Let's Encrypt, Glogal Sign, Verisign, Digicert e etc. O clients-ca.pem deve ser o certificado de uma CA intermediária (pode inclusive ser gerada) que foi utilizado para assinar o certificado cliente utilizado no processo de autenticação mTLS.",
+  "client-pem-used-to-make-the-tls": "<strong>client.pem</strong>: usado para realizar a conexão mTLS como cliente",
+  "client-key-pem-also-used": "<strong>client-key.pem</strong>: também utilizado para realizar a conexão mTLS como cliente",
+  "server-ca-pem-used-to-verify": "(Opcional) <strong>server-ca.pem</strong>: caso a variável de ambiente PROXY_SSL_VERIFY=on é necessário indicar um certificado público da CA que assinou o certificado do servidor de destino para ele ser reconhecido como confiável pelo Ambassador",
 
-  "download-certificate-to-test-local-instructions": "Para executar localmente, crie um <code>docker-compose.yml</code>, como no exemplo acima, e altere o <code>PROXY_PASS</code> para um endereço web conhecido, crie um arquivo com o nome <strong>certs</strong> e baixe os certificados dentro deste diretório mapeando o volume para a pasta <code>/etc/nginx/conf.d/certs</code>.",
+  "certificate-files-list-description": "O recomendado é que o <strong>server-key.pem</strong> e o <strong>server.pem</strong> sejam originários de uma Autoridade Certificadora pública confiável, tais como: Let's Encrypt, Glogal Sign, Verisign, Digicert e etc. O <strong>clients-ca.pem</strong> deve ser o certificado de uma CA intermediária (pode inclusive ser autoassinada) que foi utilizado para assinar o certificado cliente utilizado no processo de autenticação mTLS.",
+  "ambassador-certificate-files-list-description": "Para rodar localmente, crie um <code>docker-compose.yml</code> - como no exemplo acima -, altere o <code>PROXY_PASS</code> para o endereço do mTLS server para o qual você quer fazer a requisição, crie uma pasta com o nome <strong>certs</strong> e baixe os certificados cliente autorizados nesse server para dentro dessa pasta mapeando um volume dessa pasta para <code>/etc/nginx/conf.d/certs</code>.",
+
+  "download-certificate-to-test-local-instructions": "Para rodar localmente, crie um <code>docker-compose.yml</code> - como no exemplo acima -, altere o <code>PROXY_PASS</code> para um endereço web conhecido, crie uma pasta com o nome <strong>certs</strong> e baixe os seguintes certificados dentro dela mapeando o volume para a pasta <code>/etc/nginx/conf.d/certs</code>.",
+  "ambassador-download-trusted-client-certificate-to-test-local-instructions": "Se quiser rodar um teste local para ver o Ambassador funcionando, crie um <code>docker-compose.yml</code> - como no exemplo acima -, altere o <code>PROXY_PASS</code> para <strong>https://sidecar.mtls.labbs.com.br</strong>, crie uma pasta com o nome <strong>certs</strong> e baixe os seguintes certificados dentro dela mapeando o volume desse diretório para <code>/etc/nginx/conf.d/certs</code>:",
 
   "docker-compose-up-instructions": "Depois de fazer o download na pasta <strong>certs</strong>, suba o container:",
 

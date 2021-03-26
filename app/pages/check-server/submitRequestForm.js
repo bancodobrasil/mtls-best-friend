@@ -14,7 +14,6 @@ export default function SubmitRequestForm() {
   const [url, setURL] = useState();
   const [clientKey, setClientKey] = useState();
   const [certificate, setCertificate] = useState();
-  const [ca, setCA] = useState();
 
   const [methodGET, setMethodGET] = useState(true);
   const [methodPOST, setMethodPOST] = useState(true);
@@ -51,7 +50,7 @@ export default function SubmitRequestForm() {
             {methods.map((m) => (
               <>
                 <li className="mb-2">
-                  <ItemTestWithValidCertificate url={url} method={m} clientKey={clientKey} certificate={certificate} ca={ca} />
+                  <ItemTestWithValidCertificate url={url} method={m} clientKey={clientKey} certificate={certificate} />
                 </li>
                 <li className="mb-2">
                   <ItemTestWithoutCertificate url={url} method={m} />
@@ -100,20 +99,6 @@ export default function SubmitRequestForm() {
           </span>
           <textarea
             onChange={(e) => setCertificate(e.target.value)}
-            className="border"
-            rows="8"
-            className="border font-mono text-sm mt-2 p-4"
-            placeholder={`-----BEGIN CERTIFICATE-----
-
------END CERTIFICATE-----`}
-          />
-        </div>
-        <div className="flex flex-col mt-4">
-          <span>
-            <Trans i18nKey="ca-label-upload" />
-          </span>
-          <textarea
-            onChange={(e) => setCA(e.target.value)}
             className="border"
             rows="8"
             className="border font-mono text-sm mt-2 p-4"
