@@ -100,7 +100,7 @@ services:
             <div className="mt-2">
               <Trans i18nKey="curl-to-test-instructions" components={{ code: <code /> }} />
               <div className="bg-gray-50 p-3 mt-2">
-                <code className="text-sm">$ curl https://localhost:9090</code>
+                <code className="text-sm">$ curl http://localhost:9090</code>
               </div>
             </div>
           </div>

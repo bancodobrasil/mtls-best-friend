@@ -27,8 +27,10 @@
   "server-ca-pem-used-to-verify": "<strong>server-ca.pem</strong>: if the environment variable PROXY_SSL_VERIFY=on you will have to put this public CA certificate used to sign the destination server for that to be recognized as trusted by the Ambassador",
 
   "certificate-files-list-description": "The <strong>server-key.pem</strong> and <strong>server.pem</strong> should be from a trustworthy Certification Authority, such as Let's Encrypt, Glogal Sign, Verisign, Digicert and so son. The <strong>clients-ca.pem</strong> must be an intermediate CA (could be self-signed) that was used to sign the client certificates used in mTLS authentication process.",
+  "ambassador-certificate-files-list-description": "To start using the ambassador, create a <code>docker-compose.yml</code> file - como no exemplo acima -, set the <code>PROXY_PASS</code> env var to the mTLS endpoint you need to make the request to, create a folder named <strong>certs</strong> and download a valid and authorized client key/certificate to this endpoint inside this folder, mapping the this folder as a volume to <code>/etc/nginx/conf.d/certs</code>.",
 
   "download-certificate-to-test-local-instructions": "To run locally, create a <code>docker-compose.yml</code> file like the one above, set the <code>PROXY_PASS</code> to a known website address, create a folder named <strong>certs</strong> and download the following certificates to this folder mapping it as volume to the <code>/etc/nginx/conf.d/certs</code> folder.",
+  "ambassador-download-trusted-client-certificate-to-test-local-instructions": "If you want to make a quick test with the Ambassador, create a <code>docker-compose.yml</code> file like the one above, set the <code>PROXY_PASS</code> to <strong>https://sidecar.mtls.labbs.com.br</strong>, create a folder named <strong>certs</strong> and download the following files to this folder mapping it as a volume to <code>/etc/nginx/conf.d/certs</code>:",
 
   "docker-compose-up-instructions": "After downloading the certificate to the <strong>certs</strong> folder, bring the container up:",
 
