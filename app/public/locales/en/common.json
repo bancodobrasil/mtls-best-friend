@@ -6,7 +6,7 @@
 
   "mtls-client-card-description": "Download a <strong>client certificate and key</strong> to make a quick connection test from your application to a ready to ping mTLS server.",
 
-  "sidecar-proxy-card-description": "Leave the mTLS dirty job away from your API endpoints using this Sidecar Proxy Docker image, standalone on in your prefered cluster provider.",
+  "sidecar-proxy-card-description": "Leave the mTLS dirty job away from your API endpoints using this Sidecar Proxy Docker image on in your prefered cluster provider.",
 
   "ambassador-gateway-card-description": "Need some help making a request to an mTLS server? This Ambassador Docker image got you covered! Make a regular request to it and it will handle the mTLS stuff.",
 
