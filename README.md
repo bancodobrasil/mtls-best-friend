@@ -3,7 +3,7 @@
 [![This is a Poppins project](https://raw.githubusercontent.com/bancodobrasil/poppins/master/badge-poppins.svg)](https://github.com/bancodobrasil/poppins)
 [![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)
 
-A lightweight website for testing mTLS as both client and server
+A lightweight website for testing mTLS as both client and server, built with **Next.js**
 
 ## This project was made for first-time contributors and open source beginners
 
