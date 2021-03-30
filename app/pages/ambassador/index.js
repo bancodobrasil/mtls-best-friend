@@ -43,7 +43,7 @@ services:
     volumes:
       - ./path/to/certs:/etc/nginx/conf.d/certs
     ports:
-      - 443:443
+      - 9090:80
             `}</pre>
             </div>
           </div>
