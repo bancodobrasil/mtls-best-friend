@@ -82,6 +82,16 @@ services:
                 </a>
               </li>
               <li>
+                <a href="/demo/certs/client.pem" className="underline text-blue-600">
+                  client.pem
+                </a> 
+              </li>
+              <li>
+                <a href="/demo/certs/client-key.pem" className="underline text-blue-600">
+                  client-key.pem
+                </a>
+              </li>
+              <li>
                 <a href="/demo/certs/clients-ca.pem" className="underline text-blue-600">
                   clients-ca.pem
                 </a>
