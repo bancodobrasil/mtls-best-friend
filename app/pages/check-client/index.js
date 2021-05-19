@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "../../components/layout";
 import { useState } from "react";
 
+import SubmitRequestForm from "./submitRequestForm";
+
 export default function Client() {
   const { t } = useTranslation("common");
 
@@ -124,6 +126,8 @@ export default function Client() {
           </div>
         </main>
       </div>
+
+      <SubmitRequestForm />
     </Layout>
   );
 }
