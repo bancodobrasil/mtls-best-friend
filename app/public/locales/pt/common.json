@@ -70,5 +70,7 @@
   "download-client-certificate": "Baixar o client certificate",
   "download-server-ca-to-add-to-trust": "Baixe a CA do certificado usado no servidor de teste para garantir que ele será aceito pela sua aplicação cliente",
   "download-server-ca": "Baixar a CA do certificado do servidor de teste",
-  "send-the-request-to-test-server-at": "Envie as requisições da sua aplicação cliente para"
+  "send-the-request-to-test-server-at": "Envie as requisições da sua aplicação cliente para",
+
+  "download-server-certificate": "Você pode baixar a chave privada, o certificado pública e o certificado CA através dos links abaixo:"
 }

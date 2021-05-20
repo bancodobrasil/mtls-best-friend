@@ -68,5 +68,8 @@
   "download-client-certificate": "Download the client certificate",
   "download-server-ca-to-add-to-trust": "Download the test server CA to add it as a trusted server certificate",
   "download-server-ca": "Download the test server CA",
-  "send-the-request-to-test-server-at": "Send the requests from your client application to"
+  "send-the-request-to-test-server-at": "Send the requests from your client application to",
+
+  "download-server-certificate": "You can download the private key, public certificate and CA certificate through the links below:"
+  
 }
