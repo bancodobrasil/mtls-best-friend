@@ -127,7 +127,48 @@ export default function Client() {
         </main>
       </div>
 
-      <SubmitRequestForm />
+      <div className="container mx-auto max-w-screen-lg pt-8">
+        <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="border-r border-b border-gray-200 rounded p-8">
+            <div className="mt-8">
+              <Trans i18nKey="download-server-certificate" components={{ code: <code /> }} />
+              <br/>
+              <p>
+                <a
+                  href="https://github.com/bancodobrasil/api-mtls-sidecar-proxy/blob/main/example/sidecar/server-certs/server-key.pem"
+                  className="underline text-blue-600"
+                  target="_blank"
+                  rel="noreferer"
+                >
+                  Server key
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://github.com/bancodobrasil/api-mtls-sidecar-proxy/blob/main/example/sidecar/server-certs/server.pem"
+                  className="underline text-blue-600"
+                  target="_blank"
+                  rel="noreferer"
+                >
+                  Server certificate
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://github.com/bancodobrasil/api-mtls-sidecar-proxy/blob/main/example/sidecar/server-certs/server-ca.pem"
+                  className="underline text-blue-600"
+                  target="_blank"
+                  rel="noreferer"
+                >
+                  Server CA
+                </a>
+              </p>
+            </div>
+          </div>
+          <SubmitRequestForm />
+        </main>
+      </div>
+      
     </Layout>
   );
 }
